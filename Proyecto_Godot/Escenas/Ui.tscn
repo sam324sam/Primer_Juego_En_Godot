@@ -1,0 +1,185 @@
+[gd_scene load_steps=13 format=3 uid="uid://cmgkpvfauy1aw"]
+
+[ext_resource type="Texture2D" uid="uid://bpe35k1bc78mc" path="res://Assets/VidaNave.png" id="1_8f023"]
+[ext_resource type="Script" path="res://Escenas/Scripts/vida.gd" id="1_tve7i"]
+[ext_resource type="Script" path="res://Escenas/Scripts/TimerLabel.gd" id="3_bco1t"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="4_2mexk"]
+[ext_resource type="Texture2D" uid="uid://clcwmvuocq0ra" path="res://Assets/Jefe1/apuntado.png" id="6_adhqn"]
+[ext_resource type="PackedScene" uid="uid://csus4nrutve3u" path="res://Assets/Menu/OpcionesPausa.tscn" id="7_3xvxn"]
+[ext_resource type="Script" path="res://Escenas/Scripts/Node2D.gd" id="7_brrks"]
+[ext_resource type="Texture2D" uid="uid://bm5ok2fgslhcp" path="res://Assets/Jefe1/apuntadoN.png" id="7_e2sbr"]
+
+[sub_resource type="Animation" id="Animation_spje5"]
+resource_name = "Desfundido"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_44d1p"]
+resource_name = "FundidoNegro"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.02, 1.6, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_r7mf2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yvbdh"]
+_data = {
+"Desfundido": SubResource("Animation_spje5"),
+"FundidoNegro": SubResource("Animation_44d1p"),
+"RESET": SubResource("Animation_r7mf2")
+}
+
+[node name="Ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tve7i")
+
+[node name="Vidas" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Vidas"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("1_8f023")
+
+[node name="TextureRect2" type="TextureRect" parent="Vidas"]
+layout_mode = 2
+offset_left = 72.0
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 64.0
+texture = ExtResource("1_8f023")
+
+[node name="TextureRect3" type="TextureRect" parent="Vidas"]
+layout_mode = 2
+offset_left = 136.0
+offset_top = 8.0
+offset_right = 192.0
+offset_bottom = 64.0
+texture = ExtResource("1_8f023")
+
+[node name="TimerLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 16.0
+offset_top = 64.0
+offset_right = 56.0
+offset_bottom = 87.0
+script = ExtResource("3_bco1t")
+
+[node name="vidaJefe" type="ColorRect" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 384.0
+offset_top = 1032.0
+offset_right = 1536.0
+offset_bottom = 1072.0
+color = Color(0.972549, 0, 0, 1)
+
+[node name="nombreJefe" type="TextEdit" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 568.0
+offset_top = 976.0
+offset_right = 1328.0
+offset_bottom = 1024.0
+
+[node name="CambioDeEscema" type="ColorRect" parent="."]
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CambioDeEscema"]
+libraries = {
+"": SubResource("AnimationLibrary_yvbdh")
+}
+autoplay = "Desfundido"
+
+[node name="Joistck" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Virtual joystick left" parent="Joistck" instance=ExtResource("4_2mexk")]
+anchors_preset = -1
+anchor_top = 0.877778
+anchor_right = 0.10625
+action_left = "izquierda"
+action_right = "derecha"
+action_up = "arriba"
+action_down = "abajo"
+metadata/_edit_use_anchors_ = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Joistck"]
+position = Vector2(1480, 640)
+scale = Vector2(23.5, 24)
+texture_normal = ExtResource("6_adhqn")
+texture_pressed = ExtResource("7_e2sbr")
+action = "disparar"
+visibility_mode = 1
+
+[node name="Node2D" type="Node2D" parent="."]
+process_mode = 3
+z_index = 10
+script = ExtResource("7_brrks")
+
+[node name="OpcionesPausa" parent="Node2D" instance=ExtResource("7_3xvxn")]
+process_mode = 3
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 960.0
+offset_top = 406.0
+offset_right = 960.0
+offset_bottom = 406.0
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_horizontal = 4
+size_flags_vertical = 4

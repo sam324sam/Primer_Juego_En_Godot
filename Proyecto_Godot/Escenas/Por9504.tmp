@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbosb8te0llm2"]
+
+[ext_resource type="Texture2D" uid="uid://cip0ym6oahpvo" path="res://Assets/Por2.png" id="1_50vtc"]
+[ext_resource type="Script" path="res://Escenas/Scripts/Por2.gd" id="1_d2nd3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_16qo7"]
+radius = 35.0571
+
+[node name="Por2" type="Node2D" groups=["Power_up"]]
+script = ExtResource("1_d2nd3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Power_up"]]
+position = Vector2(0, -1)
+scale = Vector2(2.0625, 2.1875)
+texture = ExtResource("1_50vtc")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Power_up"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Power_up"]]
+position = Vector2(-1, -2)
+shape = SubResource("CircleShape2D_16qo7")

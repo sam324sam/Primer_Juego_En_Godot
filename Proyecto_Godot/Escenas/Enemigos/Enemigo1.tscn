@@ -1,0 +1,203 @@
+[gd_scene load_steps=34 format=3 uid="uid://7hmakpirmodd"]
+
+[ext_resource type="Script" path="res://Escenas/Scripts/Enemigo1.gd" id="1_jrivg"]
+[ext_resource type="Texture2D" uid="uid://dwyfskv0rhi55" path="res://Assets/Enemigo1/Enemigo1.png" id="2_dwdn1"]
+[ext_resource type="Texture2D" uid="uid://dd7dlkcenbo2d" path="res://Assets/Enemigo1/Enemigo1Dispara1.png" id="3_y7m42"]
+[ext_resource type="Texture2D" uid="uid://drc3p3avk6ndy" path="res://Assets/Enemigo1/Enemigo1Dispara2.png" id="4_da4vv"]
+[ext_resource type="Texture2D" uid="uid://c6kjtoicm4eyn" path="res://Assets/Enemigo1/Enemigo1Dispara3.png" id="5_u0pvi"]
+[ext_resource type="Texture2D" uid="uid://de0cuegbq450j" path="res://Assets/Enemigo1/Enemigo1Dispara4.png" id="6_xbu2h"]
+[ext_resource type="Texture2D" uid="uid://dxm6njvfgfam7" path="res://Assets/Enemigo1/Enemigo1Dispara5.png" id="7_qrwui"]
+[ext_resource type="Texture2D" uid="uid://b74bvdeanwu4m" path="res://Assets/Enemigo1/Enemigo1Dispara6.png" id="8_8fb4s"]
+[ext_resource type="Texture2D" uid="uid://c5kdc5ki4w8vv" path="res://Assets/Enemigo1/Fuego/pixil-frame-0.png" id="9_cdct4"]
+[ext_resource type="Texture2D" uid="uid://cjvrvklep6pqn" path="res://Assets/Enemigo1/Fuego/pixil-frame-1.png" id="10_v3rfi"]
+[ext_resource type="Texture2D" uid="uid://b48peijr7re7k" path="res://Assets/Enemigo1/Fuego/pixil-frame-2.png" id="11_hswkg"]
+[ext_resource type="Texture2D" uid="uid://c8wuyo6rcp0cy" path="res://Assets/Enemigo1/Fuego/pixil-frame-3.png" id="12_30gq6"]
+[ext_resource type="Texture2D" uid="uid://dff3sx3685fnu" path="res://Assets/Enemigo1/Fuego/pixil-frame-4.png" id="13_lwac3"]
+[ext_resource type="Texture2D" uid="uid://ce68ytexbp6yi" path="res://Assets/Enemigo1/Fuego/pixil-frame-5.png" id="14_trqsg"]
+[ext_resource type="Texture2D" uid="uid://mb1k0ndceo4u" path="res://Assets/Enemigo1/Fuego/pixil-frame-6.png" id="15_v6805"]
+[ext_resource type="Texture2D" uid="uid://uermqgawesul" path="res://Assets/Enemigo1/Fuego/pixil-frame-7.png" id="16_ig6eh"]
+[ext_resource type="Texture2D" uid="uid://dm0jf24ufvuof" path="res://Assets/Enemigo1/Enemigo1Desaparecer1.png" id="17_nek5d"]
+[ext_resource type="Texture2D" uid="uid://bcyqabxfyyqyo" path="res://Assets/Enemigo1/Enemigo1Desaparecer2.png" id="18_4d15l"]
+[ext_resource type="Texture2D" uid="uid://bodqfc67dmiwp" path="res://Assets/Enemigo1/Enemigo1Desaparecer3.png" id="19_8ibxy"]
+[ext_resource type="Texture2D" uid="uid://b2yeit5bb3t5y" path="res://Assets/Enemigo1/Enemigo1Desaparecer4.png" id="20_kh4mn"]
+[ext_resource type="Texture2D" uid="uid://djfqwq7s5ed5m" path="res://Assets/Enemigo1/Enemigo1Desaparecer5.png" id="21_pa5ap"]
+[ext_resource type="Texture2D" uid="uid://d1osrcn6ncjxl" path="res://Assets/Enemigo1/Enemigo1Desaparecer6.png" id="22_otv2p"]
+[ext_resource type="Texture2D" uid="uid://be3bleqimmknd" path="res://Assets/Enemigo1/Enemigo1Desaparecer7.png" id="23_8b72q"]
+[ext_resource type="Texture2D" uid="uid://bvepsm3h5pvgb" path="res://Assets/Enemigo1/Enemigo1Desaparecer8.png" id="24_8pj3r"]
+[ext_resource type="AudioStream" uid="uid://cm5q6drdhnr3k" path="res://Escenas/Enemigos/disparoenemigo1.mp3" id="25_djjox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jb6g"]
+size = Vector2(20, 14.0898)
+
+[sub_resource type="Animation" id="Animation_aofk3"]
+resource_name = "Disparar"
+length = 2.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemigo:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_dwdn1"), ExtResource("3_y7m42"), ExtResource("4_da4vv"), ExtResource("5_u0pvi"), ExtResource("6_xbu2h"), ExtResource("7_qrwui"), ExtResource("8_8fb4s")]
+}
+
+[sub_resource type="Animation" id="Animation_fl2od"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemigo:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_dwdn1")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y4rvj"]
+_data = {
+"Disparar": SubResource("Animation_aofk3"),
+"RESET": SubResource("Animation_fl2od")
+}
+
+[sub_resource type="Animation" id="Animation_8lyaq"]
+resource_name = "Desaparecer"
+length = 3.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemigo:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_dwdn1"), ExtResource("17_nek5d"), ExtResource("18_4d15l"), ExtResource("19_8ibxy"), ExtResource("20_kh4mn"), ExtResource("21_pa5ap"), ExtResource("22_otv2p"), ExtResource("23_8b72q"), ExtResource("24_8pj3r")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fuego:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_cswj6"]
+resource_name = "Fuego"
+length = 3.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fuego:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_cdct4"), ExtResource("10_v3rfi"), ExtResource("11_hswkg"), ExtResource("12_30gq6"), ExtResource("13_lwac3"), ExtResource("14_trqsg"), ExtResource("15_v6805"), ExtResource("16_ig6eh")]
+}
+
+[sub_resource type="Animation" id="Animation_b1mlp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemigo:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_dwdn1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fuego:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_cdct4")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fuego:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_77q7l"]
+_data = {
+"Desaparecer": SubResource("Animation_8lyaq"),
+"Fuego": SubResource("Animation_cswj6"),
+"RESET": SubResource("Animation_b1mlp")
+}
+
+[node name="Enemigo" type="Node2D" groups=["enemigo"]]
+script = ExtResource("1_jrivg")
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemigo"]]
+scale = Vector2(3.6, 3.64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["enemigo"]]
+position = Vector2(2.40173e-08, -3.29671)
+rotation = -3.14159
+scale = Vector2(1.2464, -1.16989)
+shape = SubResource("RectangleShape2D_1jb6g")
+
+[node name="Enemigo" type="Sprite2D" parent="." groups=["enemigo"]]
+scale = Vector2(3.6, 3.64)
+texture = ExtResource("2_dwdn1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y4rvj")
+}
+
+[node name="Loop_y_desparecer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_77q7l")
+}
+autoplay = "Fuego"
+
+[node name="Fuego" type="Sprite2D" parent="."]
+scale = Vector2(3.6, 3.64)
+texture = ExtResource("9_cdct4")
+
+[node name="Disparo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_djjox")
+volume_db = -20.955
+bus = &"Efectos"
+
+[node name="Vida" type="ColorRect" parent="."]
+offset_left = -48.0
+offset_top = -64.0
+offset_right = 48.0
+offset_bottom = -56.0
+color = Color(1, 0.0313726, 0, 1)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq2sqb1u1l5ve"]
+
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_4k4lh"]
+[ext_resource type="Texture2D" uid="uid://3inp5pjloyh6" path="res://Assets/Enemigo1.png" id="2_4ndr4"]
+[ext_resource type="Script" path="res://addons/virtual_joystick/test/player.gd" id="3_dsmxw"]
+[ext_resource type="PackedScene" uid="uid://wpcqwttjo1c" path="res://Escenas/Jugador.tscn" id="5_qvmbd"]
+
+[node name="Test" type="Node2D"]
+
+[node name="Joistck" type="CanvasLayer" parent="."]
+
+[node name="Virtual joystick left" parent="Joistck" instance=ExtResource("1_4k4lh")]
+action_left = "izquierda"
+action_right = "derecha"
+action_up = "arriba"
+action_down = "abajo"
+metadata/_edit_use_anchors_ = true
+
+[node name="Virtual joystick right" parent="Joistck" instance=ExtResource("1_4k4lh")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+
+[node name="Player" type="Sprite2D" parent="." node_paths=PackedStringArray("joystick_left", "joystick_right")]
+position = Vector2(600, 300)
+texture = ExtResource("2_4ndr4")
+script = ExtResource("3_dsmxw")
+joystick_left = NodePath("../Joistck/Virtual joystick left")
+joystick_right = NodePath("../Joistck/Virtual joystick right")
+
+[node name="Jugador" parent="." instance=ExtResource("5_qvmbd")]
+position = Vector2(792, 576)

@@ -1,0 +1,144 @@
+[gd_scene load_steps=33 format=3 uid="uid://dcufyf6mkx6d"]
+
+[ext_resource type="Texture2D" uid="uid://4fsnjgdh5s0v" path="res://Assets/Enemigo2/Enemigo2.png" id="1_ely6v"]
+[ext_resource type="Script" path="res://Escenas/Enemigos/Enemigo2.gd" id="2_atyde"]
+[ext_resource type="Texture2D" uid="uid://ccq0e4sq7qmg8" path="res://Assets/Enemigo2/Enemigo2Loop1.png" id="3_u4sri"]
+[ext_resource type="Texture2D" uid="uid://bee7ho6yvfiag" path="res://Assets/Enemigo2/Enemigo2Loop2.png" id="4_3w404"]
+[ext_resource type="Texture2D" uid="uid://boo3bfau0ohwj" path="res://Assets/Enemigo2/Enemigo2Loop3.png" id="5_q53ou"]
+[ext_resource type="Texture2D" uid="uid://pfxjws0bkd2b" path="res://Assets/Enemigo2/Enemigo2Loop4.png" id="6_ddf8i"]
+[ext_resource type="Texture2D" uid="uid://dqs8wyrydhg42" path="res://Assets/Enemigo2/Enemigo2Loop5.png" id="7_fx0ye"]
+[ext_resource type="Texture2D" uid="uid://d36fv0b5dogth" path="res://Assets/Enemigo2/Enemigo2Loop6.png" id="8_e22ex"]
+[ext_resource type="Texture2D" uid="uid://dlscrgh60kn3r" path="res://Assets/Enemigo2/Enemigo2Loop7.png" id="9_d8p8x"]
+[ext_resource type="Texture2D" uid="uid://c2ip3oqtiu3b7" path="res://Assets/Enemigo2/Enemigo2Loop8.png" id="10_2vp4o"]
+[ext_resource type="Texture2D" uid="uid://chtlasrfqeeq8" path="res://Assets/Enemigo2/Enemigo2Loop9.png" id="11_eosca"]
+[ext_resource type="Texture2D" uid="uid://cweqvm6dripgy" path="res://Assets/Enemigo2/Enemigo2Loop10.png" id="12_spq7m"]
+[ext_resource type="Texture2D" uid="uid://d3tyr6o0yllhl" path="res://Assets/Enemigo2/Enemigo2Loop11.png" id="13_4tike"]
+[ext_resource type="Texture2D" uid="uid://dwrtgfac2grgd" path="res://Assets/Enemigo2/Enemigo2Loop12.png" id="14_l4vft"]
+[ext_resource type="Texture2D" uid="uid://cxo2bwcynk6d4" path="res://Assets/Enemigo2/Enemigo2Desaparecer1.png" id="15_7jqhy"]
+[ext_resource type="Texture2D" uid="uid://kjv78u36jdye" path="res://Assets/Enemigo2/Enemigo2Desaparecer2.png" id="16_iea15"]
+[ext_resource type="Texture2D" uid="uid://cyb7w6vbka6hu" path="res://Assets/Enemigo2/Enemigo2Desaparecer3.png" id="17_omxjk"]
+[ext_resource type="Texture2D" uid="uid://ccpj4n6xpfxtx" path="res://Assets/Enemigo2/Enemigo2Desaparecer4.png" id="18_ifx50"]
+[ext_resource type="Texture2D" uid="uid://dg1nuf6q86t4m" path="res://Assets/Enemigo2/Enemigo2Desaparecer5.png" id="19_8l8ay"]
+[ext_resource type="Texture2D" uid="uid://dov5emvagtlv3" path="res://Assets/Enemigo2/Enemigo2Desaparecer6.png" id="20_8nn4w"]
+[ext_resource type="Texture2D" uid="uid://dbxj33ch0uqya" path="res://Assets/Enemigo2/Enemigo2Desaparecer7.png" id="21_35piu"]
+[ext_resource type="Texture2D" uid="uid://bbe1xfbnsxot8" path="res://Assets/Enemigo2/Enemigo2Desaparecer8.png" id="22_j74j0"]
+[ext_resource type="Texture2D" uid="uid://dicq2djq8a7er" path="res://Assets/Enemigo2/Enemigo2Desaparecer9.png" id="23_chgu0"]
+[ext_resource type="Texture2D" uid="uid://cmuc8vopgbfu6" path="res://Assets/Enemigo2/Enemigo2Desaparecer10.png" id="24_e1k6r"]
+[ext_resource type="Texture2D" uid="uid://4j535e0dc641" path="res://Assets/Enemigo2/Enemigo2Desaparecer11.png" id="25_vpgyf"]
+[ext_resource type="Texture2D" uid="uid://bx5dkr76iou25" path="res://Assets/Enemigo2/Enemigo2Desaparecer12.png" id="26_r2i12"]
+[ext_resource type="Texture2D" uid="uid://cbr2ospxwfyo7" path="res://Assets/Enemigo2/Enemigo2Desaparecer13.png" id="27_yw357"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ti1tb"]
+size = Vector2(22.2864, 24.1875)
+
+[sub_resource type="Animation" id="Animation_lf5r2"]
+resource_name = "Desaparecer"
+length = 2.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_u4sri"), ExtResource("15_7jqhy"), ExtResource("16_iea15"), ExtResource("17_omxjk"), ExtResource("18_ifx50"), ExtResource("19_8l8ay"), ExtResource("20_8nn4w"), ExtResource("21_35piu"), ExtResource("22_j74j0"), ExtResource("23_chgu0"), ExtResource("24_e1k6r"), ExtResource("25_vpgyf"), ExtResource("26_r2i12"), ExtResource("27_yw357")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.7, 2.8, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(5.25, 5.29688), Vector2(6.645, 6.704), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_nvra3"]
+resource_name = "Loop"
+length = 4.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2, 3.5, 3.6, 4, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_ely6v"), ExtResource("3_u4sri"), ExtResource("4_3w404"), ExtResource("5_q53ou"), ExtResource("6_ddf8i"), ExtResource("7_fx0ye"), ExtResource("8_e22ex"), ExtResource("9_d8p8x"), ExtResource("10_2vp4o"), ExtResource("11_eosca"), ExtResource("12_spq7m"), ExtResource("13_4tike"), ExtResource("14_l4vft")]
+}
+
+[sub_resource type="Animation" id="Animation_11m4r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_ely6v")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5.25, 5.29688)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vhheq"]
+_data = {
+"Desaparecer": SubResource("Animation_lf5r2"),
+"Loop": SubResource("Animation_nvra3"),
+"RESET": SubResource("Animation_11m4r")
+}
+
+[node name="Node2D" type="Node2D" groups=["enemigo"]]
+script = ExtResource("2_atyde")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["enemigo"]]
+position = Vector2(0, -2)
+scale = Vector2(5.25, 5.29688)
+texture = ExtResource("1_ely6v")
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemigo"]]
+visible = false
+scale = Vector2(3.6, 3.64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["enemigo"]]
+position = Vector2(-0.277742, -4.25822)
+rotation = -3.14159
+scale = Vector2(1.2464, -1.16989)
+shape = SubResource("RectangleShape2D_ti1tb")
+
+[node name="Loop" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vhheq")
+}
+autoplay = "Loop"
+
+[node name="Vida" type="ColorRect" parent="."]
+offset_left = -48.0
+offset_top = -64.0
+offset_right = 48.0
+offset_bottom = -56.0
+color = Color(1, 0.0313726, 0, 1)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

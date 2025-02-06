@@ -1,0 +1,144 @@
+[gd_scene load_steps=18 format=3 uid="uid://dg77msnel53ow"]
+
+[ext_resource type="Texture2D" uid="uid://bejr3oe4k6p8m" path="res://Assets/Jefe1/Jefe1.png" id="1_fwa5p"]
+[ext_resource type="Script" path="res://Escenas/Enemigos/jefeFondo1.gd" id="1_krssw"]
+[ext_resource type="Texture2D" uid="uid://b88xrrdo5weam" path="res://Assets/Jefe1/Fuego/pixil-frame-0.png" id="2_rxlgh"]
+[ext_resource type="Texture2D" uid="uid://dpmqu8fhqlpj6" path="res://Assets/Jefe1/Fuego/pixil-frame-1.png" id="3_xtton"]
+[ext_resource type="Texture2D" uid="uid://buwh1j3v2ayjv" path="res://Assets/Jefe1/Fuego/pixil-frame-2.png" id="4_if1a8"]
+[ext_resource type="Texture2D" uid="uid://ca10slacmt24m" path="res://Assets/Jefe1/Fuego/pixil-frame-3.png" id="5_5qmlc"]
+[ext_resource type="Texture2D" uid="uid://cbggivr8xcw3y" path="res://Assets/Jefe1/Fuego/pixil-frame-4.png" id="6_awolh"]
+[ext_resource type="Texture2D" uid="uid://rpw4vtt71ptl" path="res://Assets/Jefe1/Fuego/pixil-frame-5.png" id="7_qwo5y"]
+[ext_resource type="Texture2D" uid="uid://d1bj5sb6iafmk" path="res://Assets/Jefe1/Fuego2/pixil-frame-0.png" id="8_cpyks"]
+[ext_resource type="Texture2D" uid="uid://da2xjiod8h415" path="res://Assets/Jefe1/Fuego2/pixil-frame-1.png" id="9_ow3ka"]
+[ext_resource type="Texture2D" uid="uid://dk26ujbjx7sy7" path="res://Assets/Jefe1/Fuego2/pixil-frame-2.png" id="10_dhec7"]
+[ext_resource type="Texture2D" uid="uid://1457w72o8hww" path="res://Assets/Jefe1/Fuego2/pixil-frame-3.png" id="11_rph0o"]
+[ext_resource type="Texture2D" uid="uid://bgt8iq6ax5rao" path="res://Assets/Jefe1/Fuego2/pixil-frame-4.png" id="12_q7np5"]
+[ext_resource type="Texture2D" uid="uid://bvm0q8j6ajd3f" path="res://Assets/Jefe1/Fuego2/pixil-frame-5.png" id="13_f51mo"]
+
+[sub_resource type="Animation" id="Animation_nux5h"]
+resource_name = "Loop"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fuego:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_rxlgh"), ExtResource("3_xtton"), ExtResource("4_if1a8"), ExtResource("5_5qmlc"), ExtResource("6_awolh"), ExtResource("7_qwo5y")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fuego2:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [ExtResource("8_cpyks"), ExtResource("9_ow3ka"), ExtResource("10_dhec7"), ExtResource("11_rph0o"), ExtResource("12_q7np5"), ExtResource("13_f51mo")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fuego3:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_cpyks"), ExtResource("9_ow3ka"), ExtResource("10_dhec7"), ExtResource("11_rph0o"), ExtResource("12_q7np5"), ExtResource("13_f51mo")]
+}
+
+[sub_resource type="Animation" id="Animation_2lvlu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fuego:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_rxlgh")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fuego2:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("8_cpyks")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fuego3:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_cpyks")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yqm3y"]
+_data = {
+"Loop": SubResource("Animation_nux5h"),
+"RESET": SubResource("Animation_2lvlu")
+}
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-8, 0)
+script = ExtResource("1_krssw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.509286, 0.509286, 0.509286, 1)
+z_index = -4
+position = Vector2(8, -1.90735e-06)
+rotation = 3.14159
+scale = Vector2(1.82839, 1.66093)
+texture = ExtResource("1_fwa5p")
+
+[node name="Fuego" type="Sprite2D" parent="."]
+modulate = Color(0.517184, 0.517184, 0.517184, 1)
+z_index = -4
+position = Vector2(8, 48)
+rotation = 3.14159
+scale = Vector2(1.781, 1.54216)
+texture = ExtResource("2_rxlgh")
+
+[node name="LoopFuego" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yqm3y")
+}
+autoplay = "Loop"
+
+[node name="Fuego2" type="Sprite2D" parent="."]
+modulate = Color(0.439049, 0.439049, 0.439049, 1)
+z_index = -4
+position = Vector2(-34, 42)
+rotation = 3.14159
+scale = Vector2(2.585, 1.568)
+texture = ExtResource("8_cpyks")
+
+[node name="Fuego3" type="Sprite2D" parent="."]
+modulate = Color(0.47788, 0.47788, 0.47788, 1)
+z_index = -4
+position = Vector2(48, 42)
+rotation = 3.14159
+scale = Vector2(2.58527, 1.56824)
+texture = ExtResource("8_cpyks")

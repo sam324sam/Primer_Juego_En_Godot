@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://it2eyb656bv0"]
+
+[ext_resource type="Texture2D" uid="uid://bf514uj2euyl7" path="res://Assets/1920x1080.webp" id="2_iei8h"]
+[ext_resource type="PackedScene" uid="uid://wpcqwttjo1c" path="res://Escenas/Jugador.tscn" id="3_wm4do"]
+[ext_resource type="PackedScene" uid="uid://ct17jat7gd7v1" path="res://Escenas/Por2.tscn" id="4_h6h6e"]
+
+[sub_resource type="GDScript" id="GDScript_v66tu"]
+script/source = "extends Node2D
+
+func _physics_process(delta):
+	generar_asteroide()
+
+var intervalo_asteroide = true
+func  generar_asteroide():
+	if intervalo_asteroide :
+		var asteroide = preload(\"res://Escenas/asteroide.tscn\").instantiate()
+		var viewport_rect = get_viewport_rect()
+		var min_x = viewport_rect.position.x
+		var max_x = viewport_rect.size.x
+		var random_x = randf_range(min_x, max_x)
+		asteroide.position.x = random_x
+		asteroide.position.y = 20
+		add_child(asteroide)  # Añadir el asteroide como hijo de este nodo
+		
+		var area_2d = asteroide.get_node(\"Area2D\")
+		if area_2d:
+			# Conectar las señales del Area2D al método _desaparecer en este script
+			area_2d.connect(\"body_exited\", self, \"_desaparecer\")
+		
+		intervalo_asteroide = false 
+		await get_tree().create_timer(8) 
+		intervalo_asteroide = true
+		
+		
+func _desaparecer(body):
+	# Método para manejar el evento cuando un cuerpo sale del Area2D del asteroide
+	body.queue_free()  # Eliminar el cuerpo que salió del área del asteroide
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u41y0"]
+size = Vector2(860.672, 45.5424)
+
+[node name="Espacio" type="Node2D"]
+script = SubResource("GDScript_v66tu")
+
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(961, 541)
+scale = Vector2(2.22791, 2.23967)
+texture = ExtResource("2_iei8h")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(961, 541)
+scale = Vector2(2.22791, 2.23967)
+
+[node name="FinDePantalla" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.448842, -23.2177)
+shape = SubResource("RectangleShape2D_u41y0")
+
+[node name="Jugador" parent="." instance=ExtResource("3_wm4do")]
+position = Vector2(958, 546)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("4_h6h6e")]
+position = Vector2(2132, 484)

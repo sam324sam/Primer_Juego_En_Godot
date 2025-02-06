@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://dghpwup0a6clj"]
+
+[ext_resource type="Script" path="res://Escenas/Nivel 1/Nivel1.gd" id="1_g6374"]
+[ext_resource type="PackedScene" uid="uid://wpcqwttjo1c" path="res://Escenas/Jugador.tscn" id="3_pyr4q"]
+[ext_resource type="Shader" path="res://Escenas/Shaders/espacio.gdshader" id="4_jibt8"]
+[ext_resource type="PackedScene" uid="uid://cmgkpvfauy1aw" path="res://Escenas/Ui.tscn" id="5_rip33"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3jvjx"]
+shader = ExtResource("4_jibt8")
+shader_parameter/dimensions = Vector2(1024, 600)
+shader_parameter/small_stars = 100.0
+shader_parameter/small_stars_far_size = 0.4
+shader_parameter/small_stars_near_size = 0.8
+shader_parameter/large_stars = 8.0
+shader_parameter/large_stars_far_size = 0.2
+shader_parameter/large_stars_near_size = 0.3
+shader_parameter/far_stars_color = Color(0.429114, 0.562963, 0.98865, 1)
+shader_parameter/near_stars_color = Color(0.684341, 0.413522, 0.851235, 1)
+shader_parameter/base_scroll_speed = -0.05
+shader_parameter/additional_scroll_speed = -0.05
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gli7o"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_pgh0p"]
+a = Vector2(1920, 21)
+b = Vector2(5, 22)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_27h7i"]
+a = Vector2(14, 17)
+b = Vector2(13, 1096)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_oaxfl"]
+b = Vector2(1922, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_b5mll"]
+b = Vector2(0, 1083)
+
+[node name="Nivel1" type="Node2D"]
+script = ExtResource("1_g6374")
+
+[node name="Jugador" parent="." instance=ExtResource("3_pyr4q")]
+position = Vector2(968, 506.999)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -5
+texture_filter = 4
+material = SubResource("ShaderMaterial_3jvjx")
+offset_top = -8.0
+offset_right = 1919.0
+offset_bottom = 1088.0
+color = Color(0.0726426, 0.0224512, 0.147543, 1)
+
+[node name="Bordes" type="StaticBody2D" parent="."]
+position = Vector2(-9.99896, -15.9992)
+scale = Vector2(1, 0.999999)
+physics_material_override = SubResource("PhysicsMaterial_gli7o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordes"]
+position = Vector2(8, -6)
+shape = SubResource("SegmentShape2D_pgh0p")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bordes"]
+position = Vector2(0, 13)
+shape = SubResource("SegmentShape2D_27h7i")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Bordes"]
+position = Vector2(7, 1099)
+shape = SubResource("SegmentShape2D_oaxfl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Bordes"]
+position = Vector2(1929, 15)
+shape = SubResource("SegmentShape2D_b5mll")
+
+[node name="Ui" parent="." instance=ExtResource("5_rip33")]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioListener2D"]
+position = Vector2(969, 443)
+volume_db = -20.0
+autoplay = true
+bus = &"Musica"
+
+[connection signal="finished" from="AudioListener2D/AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

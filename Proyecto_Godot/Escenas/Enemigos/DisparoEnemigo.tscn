@@ -1,0 +1,121 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnfm15en7e5he"]
+
+[ext_resource type="Script" path="res://Escenas/Scripts/DisparoEnemigo.gd" id="1_ugcyy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_byvo2"]
+size = Vector2(52, 26)
+
+[sub_resource type="Animation" id="Animation_oljr1"]
+resource_name = "Desaparecer"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.45, 0.45), Vector2(1, 0.08)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.45, 0.45), Vector2(1, 0.08)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(20, -11.9999), Vector2(22, -11.9999), Vector2(19, -12)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-25, -12.0001), Vector2(-23, -12.0001), Vector2(-24, -12.0001)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect2:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k06vh"]
+_data = {
+"Desaparecer": SubResource("Animation_oljr1")
+}
+
+[node name="Node2D" type="Node2D" groups=["enemigo"]]
+rotation = 3.14159
+script = ExtResource("1_ugcyy")
+
+[node name="Area2D" type="Area2D" parent="." groups=["balaEnemigo", "enemigo"]]
+position = Vector2(-1, 0.5)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["balaEnemigo"]]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_byvo2")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -25.0
+offset_top = -12.0001
+offset_right = -20.0
+offset_bottom = 11.9999
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 20.0
+offset_top = -11.9999
+offset_right = 25.0
+offset_bottom = 12.0001
+color = Color(1, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k06vh")
+}
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
