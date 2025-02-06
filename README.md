@@ -4,6 +4,10 @@ Este es un juego de naves en 2D desarrollado con Godot, creado como un reto pers
 
 **Nota importante**: Este proyecto **no continuará en desarrollo**. El objetivo principal era aprender y experimentar con Godot en un plazo corto de tiempo. Sin embargo, se aceptan contribuciones para mejorar el juego o expandirlo, ¡si te interesa aportar, siéntete libre de hacerlo!
 
+<div align="center">
+  <img src="ImgGithub/inicioJuego.png" alt="Inicio" width="500">
+</div>
+
 ## Características
 
 - **Nivel único**: El juego tiene solo un nivel, en el que el jugador se enfrenta a varios enemigos y un jefe final.
