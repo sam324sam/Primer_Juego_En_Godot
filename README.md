@@ -45,15 +45,7 @@ El repositorio contiene ejecutables para **escritorio** y **dispositivos móvile
 
 Aunque el proyecto no continuará activamente en desarrollo, **se aceptan contribuciones**. Si deseas ayudar a mejorar el juego, ya sea en términos de estabilidad, funcionalidad o incluso añadiendo contenido adicional, no dudes en enviar un pull request. Cualquier aporte será apreciado.
 
-## Próximos pasos (Opcionales)
-
-Si deseas continuar con el proyecto, estos son algunos posibles próximos pasos:
-
-- Mejorar la estabilidad y optimización del juego.
-- Añadir más niveles y enemigos.
-- Pulir la mecánica del jefe final y las fases del juego.
-- Implementar un sistema de puntuación y tablas de líderes.
-
 ## Agradecimientos
 
 Gracias a la comunidad de Godot por su constante apoyo y a todos los recursos gratuitos disponibles en línea que me ayudaron a aprender más rápido.
+Las atribuciones a la musica se encuentra en el archivo .txt de la raiz
