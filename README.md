@@ -18,12 +18,6 @@ Este es un juego de naves en 2D desarrollado con Godot, creado como un reto pers
 - **Disparos láser**: El jugador puede disparar láseres para destruir enemigos y obstáculos.
 
 <div align="center">
-  <img src="imgGithub/Jefe1.png" alt="Inicio" width="500">
-</div>
-<div align="center">
-  <img src="imgGithub/jefe2.png" alt="Inicio" width="500">
-</div>
-<div align="center">
   <img src="imgGithub/juego.png" alt="Inicio" width="500">
 </div>
 <div align="center">
@@ -33,6 +27,13 @@ Este es un juego de naves en 2D desarrollado con Godot, creado como un reto pers
 ## Objetivo del Juego
 
 El objetivo principal del juego es sobrevivir a los ataques de los enemigos y asteroides, derrotar al jefe final y completar el nivel. El jugador debe estar atento a la gestión de su escudo y vida para llegar lo más lejos posible.
+
+<div align="center">
+  <img src="imgGithub/Jefe1.png" alt="Inicio" width="500">
+</div>
+<div align="center">
+  <img src="imgGithub/jefe2.png" alt="Inicio" width="500">
+</div>
 
 ## Desarrollo
 
