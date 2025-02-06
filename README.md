@@ -28,14 +28,11 @@ Este juego fue creado como un reto personal para aprender Godot durante un mes. 
 - **Sprites**: Todos los sprites utilizados en el juego fueron creados por mí.
   
 ## Instrucciones
-**Para el codigo fuente**
+
 1. Clona o descarga el repositorio.
-2. Descomprima el archivo Proyecto Godot
-3. Abre el proyecto en Godot.
-4. Ejecuta el juego desde el editor de Godot para jugar.
-5. Usa las teclas para moverte y disparar.
-**Para solo probarlo**
-1. Descarge el ejecutable que desee y a disfrutar.
+2. Abre el proyecto en Godot.
+3. Ejecuta el juego desde el editor de Godot para jugar.
+4. Usa las teclas para moverte y disparar.
 
 ## Ejecutables
 
@@ -44,10 +41,6 @@ El repositorio contiene ejecutables para **escritorio** y **dispositivos móvile
 - **Escritorio**: Ejecutables disponibles para Windows, Linux y MacOS.
 - **Móviles**: Se incluyen APKs para Android. Sin embargo, ten en cuenta que **la versión móvil no está completamente probada ni es segura**, por lo que se recomienda tener precaución al instalarla.
 
-## Estado del Proyecto
-
-Este proyecto se encuentra en una **fase temprana e inestable**. Algunas mecánicas pueden no funcionar perfectamente, y el rendimiento podría no ser óptimo. Sin embargo, sigue siendo una buena base para experimentar y aprender más sobre Godot.
-
 ## Acepto Contribuciones
 
 Aunque el proyecto no continuará activamente en desarrollo, **se aceptan contribuciones**. Si deseas ayudar a mejorar el juego, ya sea en términos de estabilidad, funcionalidad o incluso añadiendo contenido adicional, no dudes en enviar un pull request. Cualquier aporte será apreciado.
@@ -55,4 +48,4 @@ Aunque el proyecto no continuará activamente en desarrollo, **se aceptan contri
 ## Agradecimientos
 
 Gracias a la comunidad de Godot por su constante apoyo y a todos los recursos gratuitos disponibles en línea que me ayudaron a aprender más rápido.
-La atribuciones a la musica se encuentran en el archivo .txt de la raiz del repositorio
+Contribucion a de la musica en el AtribucionSonidos.txt
