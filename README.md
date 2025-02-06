@@ -49,3 +49,7 @@ Aunque el proyecto no continuará activamente en desarrollo, **se aceptan contri
 
 Gracias a la comunidad de Godot por su constante apoyo y a todos los recursos gratuitos disponibles en línea que me ayudaron a aprender más rápido.
 Contribucion a de la musica en el AtribucionSonidos.txt
+
+## Contribuir al Proyecto
+Para conocer cómo contribuir, revisa nuestras [pautas de contribución](https://github.com/sam324sam/sam324sam/blob/main/CONTRIBUTING.md).
+
