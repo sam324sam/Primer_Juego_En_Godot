@@ -1,0 +1,183 @@
+[gd_scene load_steps=13 format=3 uid="uid://d0rpras1t7rpw"]
+
+[ext_resource type="Texture2D" uid="uid://3fm68mdtm8ya" path="res://Assets/Jefe1/ataque1Fase2/Ataque1Fase2Blaster.png" id="1_5undw"]
+[ext_resource type="Script" path="res://Escenas/Enemigos/Blaster.gd" id="1_ccoua"]
+[ext_resource type="Shader" path="res://Escenas/Shaders/Bomba.gdshader" id="3_ynk8p"]
+[ext_resource type="Texture2D" uid="uid://clcwmvuocq0ra" path="res://Assets/Jefe1/apuntado.png" id="4_0op7r"]
+[ext_resource type="AudioStream" uid="uid://b7husv5eks77s" path="res://Assets/Jefe1/35436__fons__synth-alarm-14.mp3" id="5_tmhak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3dfs"]
+size = Vector2(5, 5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ra748"]
+shader = ExtResource("3_ynk8p")
+shader_parameter/end_time = 5.0
+shader_parameter/start_freq = 1.0
+shader_parameter/end_freq = 10.0
+shader_parameter/time = 2.0
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/blink_length = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q3euj"]
+shader = ExtResource("3_ynk8p")
+shader_parameter/end_time = 5.0
+shader_parameter/start_freq = 1.0
+shader_parameter/end_freq = 10.0
+shader_parameter/time = 2.0
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/blink_length = 0.5
+
+[sub_resource type="Animation" id="Animation_bqtna"]
+resource_name = "Laser"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Laser:default_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4, 2.8, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j2cdd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Line2D:material:shader_parameter/end_time")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Apuntado:material:shader_parameter/end_time")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Laser:default_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xmno6"]
+resource_name = "apuntadoi"
+length = 2.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Line2D:material:shader_parameter/end_time")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.5, 0.9, 1.3, 1.7, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [5.0, 4.0, 3.0, 2.0, 1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Apuntado:material:shader_parameter/end_time")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.5, 0.9, 1.3, 1.7, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [5.0, 4.0, 3.0, 2.0, 1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xyhdk"]
+_data = {
+"Laser": SubResource("Animation_bqtna"),
+"RESET": SubResource("Animation_j2cdd"),
+"apuntadoi": SubResource("Animation_xmno6")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ccoua")
+
+[node name="Blaster" type="Sprite2D" parent="."]
+z_index = 3
+scale = Vector2(13.5, 16)
+texture = ExtResource("1_5undw")
+
+[node name="Area2D" type="Area2D" parent="." groups=["balaEnemigo"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["balaEnemigo"]]
+shape = SubResource("RectangleShape2D_x3dfs")
+
+[node name="Apuntado" type="Sprite2D" parent="." groups=["balaEnemigo"]]
+visible = false
+z_index = 3
+material = SubResource("ShaderMaterial_ra748")
+position = Vector2(64, 64)
+scale = Vector2(8, 8)
+texture = ExtResource("4_0op7r")
+
+[node name="Line2D" type="Line2D" parent="." groups=["balaEnemigo"]]
+material = SubResource("ShaderMaterial_q3euj")
+default_color = Color(1, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xyhdk")
+}
+
+[node name="Laser" type="Line2D" parent="."]
+default_color = Color(1, 0, 0, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_tmhak")
+volume_db = -15.0
+bus = &"Efectos"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

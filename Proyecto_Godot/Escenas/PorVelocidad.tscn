@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=3 uid="uid://bbosb8te0llm2"]
+
+[ext_resource type="Script" path="res://Escenas/Scripts/Por2.gd" id="1_kivjx"]
+[ext_resource type="Texture2D" uid="uid://crn2f0amolvgd" path="res://Assets/Velocidad.png" id="2_3p01s"]
+[ext_resource type="Texture2D" uid="uid://1vctvsoqxrjj" path="res://Assets/desaparecer.png" id="3_ojt7d"]
+[ext_resource type="Texture2D" uid="uid://b63fbeb0q3wpv" path="res://Assets/desaparecer1.png" id="4_tr13u"]
+[ext_resource type="Texture2D" uid="uid://csyukyq1nnuqp" path="res://Assets/desaparecer2.png" id="5_qhjfo"]
+[ext_resource type="Texture2D" uid="uid://cgq7s740d5lu7" path="res://Assets/desaparecer3.png" id="6_c2xme"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_16qo7"]
+radius = 35.0571
+
+[sub_resource type="Animation" id="Animation_r46ds"]
+resource_name = "Desaparecer"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.8, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2.0625, 2.1875), Vector2(1e-05, 1e-05), Vector2(1e-05, 1e-05), Vector2(3, 3), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_3p01s"), ExtResource("2_3p01s"), ExtResource("3_ojt7d"), ExtResource("4_tr13u"), ExtResource("5_qhjfo"), ExtResource("6_c2xme")]
+}
+
+[sub_resource type="Animation" id="Animation_qdbeq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.0625, 2.1875)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_3p01s")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xyli3"]
+_data = {
+"Desaparecer": SubResource("Animation_r46ds"),
+"RESET": SubResource("Animation_qdbeq")
+}
+
+[sub_resource type="GDScript" id="GDScript_2gv7y"]
+script/source = "extends AnimationPlayer
+
+"
+
+[node name="PorVelocidad" type="Node2D" groups=["Power_up"]]
+script = ExtResource("1_kivjx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Power_up"]]
+position = Vector2(0, -1)
+scale = Vector2(2.0625, 2.1875)
+texture = ExtResource("2_3p01s")
+
+[node name="PorVelocidad" type="Area2D" parent="." groups=["Power_up"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PorVelocidad" groups=["Power_up"]]
+position = Vector2(-1, -2)
+shape = SubResource("CircleShape2D_16qo7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xyli3")
+}
+script = SubResource("GDScript_2gv7y")
+
+[connection signal="area_entered" from="PorVelocidad" to="." method="_on_area_2d_area_entered"]

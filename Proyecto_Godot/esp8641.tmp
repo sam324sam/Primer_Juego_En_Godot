@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://it2eyb656bv0"]
+
+[ext_resource type="Texture2D" uid="uid://bf514uj2euyl7" path="res://Assets/1920x1080.webp" id="1_1se6h"]
+[ext_resource type="PackedScene" uid="uid://wpcqwttjo1c" path="res://Jugador.tscn" id="2_0q4h2"]
+[ext_resource type="PackedScene" uid="uid://ct17jat7gd7v1" path="res://Por2.tscn" id="3_0kt75"]
+[ext_resource type="PackedScene" uid="uid://bxi1n7nqmv75w" path="res://rayo.tscn" id="5_5roa6"]
+[ext_resource type="PackedScene" uid="uid://dn474dmq6c06y" path="res://asteroide.tscn" id="5_b1t4p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u41y0"]
+size = Vector2(860.448, 482.66)
+
+[node name="Espacio" type="Node2D"]
+
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(961, 541)
+scale = Vector2(2.22791, 2.23967)
+texture = ExtResource("1_1se6h")
+
+[node name="Area2D" type="Area2D" parent="Fondo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fondo/Area2D"]
+visible = false
+position = Vector2(-1.12213, -0.223251)
+shape = SubResource("RectangleShape2D_u41y0")
+
+[node name="Jugador" parent="." instance=ExtResource("2_0q4h2")]
+position = Vector2(1120, 535)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_0kt75")]
+position = Vector2(934, 285)
+
+[node name="Rayo" parent="." instance=ExtResource("5_5roa6")]
+position = Vector2(974, 507)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("5_b1t4p")]
+position = Vector2(397, 132)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("5_b1t4p")]
+position = Vector2(1355, 117)
+
+[node name="RigidBody2D3" parent="." instance=ExtResource("5_b1t4p")]
+position = Vector2(785, 123)
+
+[node name="RigidBody2D4" parent="." instance=ExtResource("5_b1t4p")]
+position = Vector2(930, 109)
+
+[connection signal="body_exited" from="Fondo/Area2D" to="RigidBody2D" method="_ready"]
+[connection signal="body_exited" from="Fondo/Area2D" to="RigidBody2D" method="_on_area_2d_body_exited"]

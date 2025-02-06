@@ -1,0 +1,180 @@
+[gd_scene load_steps=42 format=3 uid="uid://s05d6dqfjsyl"]
+
+[ext_resource type="Script" path="res://Escenas/Nivel 1/InicioFase2.gd" id="1_oi7an"]
+[ext_resource type="Shader" path="res://Escenas/Shaders/espacio.gdshader" id="2_3eoux"]
+[ext_resource type="Texture2D" uid="uid://bejr3oe4k6p8m" path="res://Assets/Jefe1/Jefe1.png" id="2_se42i"]
+[ext_resource type="Texture2D" uid="uid://3kggkqvpesto" path="res://Assets/Jefe1/cambiofase2/pixil-frame-0.png" id="3_n6166"]
+[ext_resource type="Texture2D" uid="uid://cpav7d012uci0" path="res://Assets/Jefe1/cambiofase2/pixil-frame-1.png" id="4_3hwjj"]
+[ext_resource type="Texture2D" uid="uid://cqa0iov38wf1b" path="res://Assets/Jefe1/cambiofase2/pixil-frame-2.png" id="5_4as1x"]
+[ext_resource type="Texture2D" uid="uid://407gb42rh6vu" path="res://Assets/Jefe1/cambiofase2/pixil-frame-3.png" id="6_ho3xu"]
+[ext_resource type="Texture2D" uid="uid://c0wt8eatd7s2q" path="res://Assets/Jefe1/cambiofase2/pixil-frame-4.png" id="7_d2lsr"]
+[ext_resource type="Texture2D" uid="uid://dr21rdfk7bsrl" path="res://Assets/Jefe1/cambiofase2/pixil-frame-5.png" id="8_ofm62"]
+[ext_resource type="Texture2D" uid="uid://dxht16hlw4irb" path="res://Assets/Jefe1/cambiofase2/pixil-frame-6.png" id="9_3ab7l"]
+[ext_resource type="Texture2D" uid="uid://dtqo5dixdvhqr" path="res://Assets/Jefe1/cambiofase2/pixil-frame-7.png" id="10_n2my1"]
+[ext_resource type="Texture2D" uid="uid://cp040fon43p8" path="res://Assets/Jefe1/cambiofase2/pixil-frame-8.png" id="11_h70ji"]
+[ext_resource type="Texture2D" uid="uid://by8uuklygljss" path="res://Assets/Jefe1/cambiofase2/pixil-frame-9.png" id="12_3a3bh"]
+[ext_resource type="Texture2D" uid="uid://bumdwhjbd4vs3" path="res://Assets/Jefe1/cambiofase2/pixil-frame-10.png" id="13_4oftb"]
+[ext_resource type="Texture2D" uid="uid://dg06x10yw5lwb" path="res://Assets/Jefe1/cambiofase2/pixil-frame-11.png" id="14_e5mes"]
+[ext_resource type="Texture2D" uid="uid://d0aqn7qulyxja" path="res://Assets/Jefe1/cambiofase2/pixil-frame-12.png" id="15_wkqu8"]
+[ext_resource type="Texture2D" uid="uid://kdo5l8dyrn07" path="res://Assets/Jefe1/cambiofase2/pixil-frame-13.png" id="16_720rp"]
+[ext_resource type="Texture2D" uid="uid://bv72i6p8pgvqk" path="res://Assets/Jefe1/cambiofase2/pixil-frame-14.png" id="17_mic6h"]
+[ext_resource type="Texture2D" uid="uid://dkfb1uje0tvi1" path="res://Assets/Jefe1/cambiofase2/pixil-frame-15.png" id="18_5gwuv"]
+[ext_resource type="Texture2D" uid="uid://yp2l6i2jtqva" path="res://Assets/Jefe1/cambiofase2/pixil-frame-16.png" id="19_um5y4"]
+[ext_resource type="Texture2D" uid="uid://bvcldmghw25u4" path="res://Assets/Jefe1/cambiofase2/pixil-frame-17.png" id="20_3owdk"]
+[ext_resource type="Texture2D" uid="uid://bokmp6u3l3ef" path="res://Assets/Jefe1/cambiofase2/pixil-frame-18.png" id="21_jbk6f"]
+[ext_resource type="Texture2D" uid="uid://cp2pok6d7x2gg" path="res://Assets/Jefe1/cambiofase2/pixil-frame-19.png" id="22_tigw7"]
+[ext_resource type="Texture2D" uid="uid://b1yjpuikuqkky" path="res://Assets/Jefe1/cambiofase2/pixil-frame-20.png" id="23_vqvjt"]
+[ext_resource type="Texture2D" uid="uid://c84ail8r3m5ld" path="res://Assets/Jefe1/cambiofase2/pixil-frame-21.png" id="24_xcvev"]
+[ext_resource type="Texture2D" uid="uid://dfhfmw02jx2kj" path="res://Assets/Jefe1/cambiofase2/pixil-frame-23.png" id="25_4qoo1"]
+[ext_resource type="Texture2D" uid="uid://15ofst6hj038" path="res://Assets/Jefe1/cambiofase2/pixil-frame-22.png" id="25_d6r5n"]
+[ext_resource type="Texture2D" uid="uid://c0u638exywgtf" path="res://Assets/Jefe1/cambiofase2/pixil-frame-24.png" id="26_ulybr"]
+[ext_resource type="Texture2D" uid="uid://dwb8cux0mpt21" path="res://Assets/Jefe1/cambiofase2/pixil-frame-25.png" id="27_cmh85"]
+[ext_resource type="Texture2D" uid="uid://dp0ikymcyicyw" path="res://Assets/Jefe1/cambiofase2/pixil-frame-26.png" id="28_ftqgg"]
+[ext_resource type="Texture2D" uid="uid://poj777spl3if" path="res://Assets/Jefe1/cambiofase2/pixil-frame-27.png" id="29_3k2eq"]
+[ext_resource type="Texture2D" uid="uid://cr4l4adqiok74" path="res://Assets/Jefe1/cambiofase2/pixil-frame-28.png" id="30_g7e5h"]
+[ext_resource type="Texture2D" uid="uid://bgst6okpdtjjr" path="res://Assets/Jefe1/cambiofase2/pixil-frame-29.png" id="31_wis0g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cway1"]
+shader = ExtResource("2_3eoux")
+shader_parameter/dimensions = Vector2(1024, 600)
+shader_parameter/small_stars = 100.0
+shader_parameter/small_stars_far_size = 0.4
+shader_parameter/small_stars_near_size = 0.8
+shader_parameter/large_stars = 8.0
+shader_parameter/large_stars_far_size = 0.2
+shader_parameter/large_stars_near_size = 0.3
+shader_parameter/far_stars_color = Color(0.429114, 0.562963, 0.98865, 1)
+shader_parameter/near_stars_color = Color(0.684341, 0.413522, 0.851235, 1)
+shader_parameter/base_scroll_speed = -0.05
+shader_parameter/additional_scroll_speed = -0.05
+
+[sub_resource type="Animation" id="Animation_spje5"]
+resource_name = "Desfundido"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_44d1p"]
+resource_name = "FundidoNegro"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.02, 1.6, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_r7mf2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yvbdh"]
+_data = {
+"Desfundido": SubResource("Animation_spje5"),
+"FundidoNegro": SubResource("Animation_44d1p"),
+"RESET": SubResource("Animation_r7mf2")
+}
+
+[sub_resource type="Animation" id="Animation_g7sle"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_se42i")]
+}
+
+[sub_resource type="Animation" id="Animation_5oiyf"]
+resource_name = "muerto"
+length = 6.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 3, 3.2, 3.4, 3.6, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 5, 5.2, 5.4, 5.6, 5.8, 6, 6.2, 6.4, 6.5, 6.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_se42i"), ExtResource("3_n6166"), ExtResource("4_3hwjj"), ExtResource("5_4as1x"), ExtResource("6_ho3xu"), ExtResource("7_d2lsr"), ExtResource("8_ofm62"), ExtResource("9_3ab7l"), ExtResource("10_n2my1"), ExtResource("11_h70ji"), ExtResource("12_3a3bh"), ExtResource("13_4oftb"), ExtResource("14_e5mes"), ExtResource("15_wkqu8"), ExtResource("16_720rp"), ExtResource("17_mic6h"), ExtResource("18_5gwuv"), ExtResource("19_um5y4"), ExtResource("20_3owdk"), ExtResource("21_jbk6f"), ExtResource("22_tigw7"), ExtResource("23_vqvjt"), ExtResource("24_xcvev"), ExtResource("25_d6r5n"), ExtResource("25_4qoo1"), ExtResource("26_ulybr"), ExtResource("27_cmh85"), ExtResource("28_ftqgg"), ExtResource("29_3k2eq"), ExtResource("30_g7e5h"), ExtResource("31_wis0g")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_32ccr"]
+_data = {
+"RESET": SubResource("Animation_g7sle"),
+"muerto": SubResource("Animation_5oiyf")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_oi7an")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -8.0
+bus = &"Musica"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -5
+texture_filter = 4
+material = SubResource("ShaderMaterial_cway1")
+offset_top = -8.0
+offset_right = 1919.0
+offset_bottom = 1088.0
+color = Color(0.0726426, 0.0224512, 0.147543, 1)
+
+[node name="CambioDeEscema" type="ColorRect" parent="."]
+z_index = 10
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 1928.0
+offset_bottom = 1096.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CambioDeEscema"]
+libraries = {
+"": SubResource("AnimationLibrary_yvbdh")
+}
+autoplay = "Desfundido"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(964, 512)
+scale = Vector2(16.875, 14)
+texture = ExtResource("2_se42i")
+
+[node name="muerte" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_32ccr")
+}

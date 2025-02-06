@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://b15072a7ajur7"]
+
+[ext_resource type="Script" path="res://Escenas/Scripts/Joystick.gd" id="1_gg7gl"]
+[ext_resource type="Script" path="res://addons/virtual_joystick/virtual_joystick.gd" id="2_ihndf"]
+[ext_resource type="Script" path="res://addons/virtual_joystick/virtual_joystick_instantiator.gd" id="3_h710e"]
+
+[node name="Joystick" type="Control"]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+script = ExtResource("1_gg7gl")
+
+[node name="Stick" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VirtualJoystick" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 152.0
+offset_top = 696.0
+offset_right = 192.0
+offset_bottom = 736.0
+script = ExtResource("2_ihndf")
+
+[node name="Virtual Joystick" type="Control" parent="VirtualJoystick"]
+anchors_preset = 0
+offset_left = -144.0
+offset_top = 96.0
+offset_right = 176.0
+offset_bottom = 384.0
+script = ExtResource("3_h710e")

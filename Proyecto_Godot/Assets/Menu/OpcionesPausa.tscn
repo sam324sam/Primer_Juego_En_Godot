@@ -1,0 +1,130 @@
+[gd_scene load_steps=4 format=3 uid="uid://csus4nrutve3u"]
+
+[ext_resource type="Script" path="res://Assets/Menu/OpcionesPausa.gd" id="1_5eqqc"]
+[ext_resource type="FontFile" uid="uid://balefipo02o67" path="res://Fuentes/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.ttf" id="1_epjex"]
+
+[sub_resource type="Theme" id="Theme_ippgd"]
+default_font = ExtResource("1_epjex")
+default_font_size = 46
+
+[node name="OpcionesPausa" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5eqqc")
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -250.0
+offset_right = 273.0
+offset_bottom = 292.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ippgd")
+
+[node name="Sonido" type="Label" parent="Menu"]
+layout_mode = 2
+text = "Sonido"
+horizontal_alignment = 1
+
+[node name="MasterLabel" type="Label" parent="Menu"]
+layout_mode = 2
+text = "Master"
+
+[node name="Master" type="HSlider" parent="Menu"]
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 5.0
+value = 5.0
+
+[node name="MusicaLabel" type="Label" parent="Menu"]
+layout_mode = 2
+text = "Musica"
+
+[node name="Musica" type="HSlider" parent="Menu"]
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 5.0
+value = 2.0
+
+[node name="EfectosLabel" type="Label" parent="Menu"]
+layout_mode = 2
+text = "Efectos"
+
+[node name="Efectos" type="HSlider" parent="Menu"]
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 5.0
+value = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Menu"]
+layout_mode = 2
+
+[node name="Resolucion" type="Label" parent="Menu/HBoxContainer2"]
+layout_mode = 2
+text = "Resolucion"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Menu/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_stretch_ratio = 0.85
+
+[node name="OptionButton" type="OptionButton" parent="Menu/HBoxContainer2"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = " 1920 x 1080"
+popup/item_1/text = " 1280 x 720"
+popup/item_1/id = 1
+popup/item_2/text = " 800 x 600"
+popup/item_2/id = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Menu"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Pantalla Completa" type="Label" parent="Menu/HBoxContainer3"]
+layout_mode = 2
+text = "Pantalla Completa"
+
+[node name="CheckButton" type="CheckButton" parent="Menu/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="MarginContainer3" type="MarginContainer" parent="Menu"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Volver" type="Button" parent="Menu"]
+process_mode = 1
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+text = "Menu
+
+"
+
+[connection signal="value_changed" from="Menu/Master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="Menu/Musica" to="." method="_on_musica_value_changed"]
+[connection signal="value_changed" from="Menu/Efectos" to="." method="_on_efectos_value_changed"]
+[connection signal="item_selected" from="Menu/HBoxContainer2/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="toggled" from="Menu/HBoxContainer3/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="Menu/Volver" to="." method="_on_volver_pressed"]

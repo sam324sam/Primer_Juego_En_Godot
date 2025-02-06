@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bum2bmeor5uy8"]
+
+[ext_resource type="Texture2D" uid="uid://3fm68mdtm8ya" path="res://Assets/Jefe1/ataque1Fase2/Ataque1Fase2Blaster.png" id="1_ospqb"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(13.5, 16)
+texture = ExtResource("1_ospqb")

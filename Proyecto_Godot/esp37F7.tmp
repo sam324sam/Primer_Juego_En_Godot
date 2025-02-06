@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://it2eyb656bv0"]
+
+[ext_resource type="Texture2D" uid="uid://bf514uj2euyl7" path="res://Assets/1920x1080.webp" id="1_1se6h"]
+[ext_resource type="Script" path="res://espacio.gd" id="1_3iopb"]
+[ext_resource type="PackedScene" uid="uid://wpcqwttjo1c" path="res://Jugador.tscn" id="2_0q4h2"]
+[ext_resource type="PackedScene" uid="uid://ct17jat7gd7v1" path="res://Por2.tscn" id="3_0kt75"]
+
+[node name="Espacio" type="Node2D"]
+script = ExtResource("1_3iopb")
+
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(961, 541)
+scale = Vector2(2.22791, 2.23967)
+texture = ExtResource("1_1se6h")
+
+[node name="Jugador" parent="." instance=ExtResource("2_0q4h2")]
+position = Vector2(929, 547)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_0kt75")]
+position = Vector2(875, 390)

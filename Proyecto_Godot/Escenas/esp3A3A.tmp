@@ -1,0 +1,265 @@
+[gd_scene load_steps=8 format=3 uid="uid://it2eyb656bv0"]
+
+[ext_resource type="Texture2D" uid="uid://du4hkairhsicv" path="res://Assets/Espacio.png" id="1_h8ypk"]
+
+[sub_resource type="GDScript" id="GDScript_v66tu"]
+script/source = "extends Node2D
+
+var intervalo_asteroide = true
+var inicio = false
+func _ready():
+	var jugador = preload(\"res://Escenas/Jugador.tscn\").instantiate()
+	var vidas_ui = preload(\"res://Escenas/Vidas.tscn\").instantiate()
+	jugador.position.y = 589
+	jugador.position.x = 968
+	jugador.connect(\"vida_reducida\", vidas, \"actualizar_vidas\")
+	add_child(jugador)
+	vidas_ui.position.y = 50
+	vidas_ui.position.x = 50
+	add_child(vidas_ui)
+	await get_tree().create_timer(4).timeout
+	generar_enemigo2()
+	generar_PowerUp()
+	generar_asteroide()
+	await get_tree().create_timer(1).timeout
+	generarFilaEnemigos()
+
+@warning_ignore(\"unused_parameter\")
+func _physics_process(delta):
+	generarEstrellas() #Escenario del fondo
+
+var intervalo_enemigo2 = true
+func generar_enemigo2(): #Arreglar
+	while true:
+		await get_tree().create_timer(5).timeout
+		if intervalo_enemigo2:
+			var advertencia = preload(\"res://Escenas/Advertencia.tscn\").instantiate()
+			var enemigo = preload(\"res://Escenas/Enemigos/Enemigo2.tscn\").instantiate()
+			var viewport_rect = get_viewport_rect()
+			var min_x = viewport_rect.position.x
+			var max_x = viewport_rect.size.x
+			var random_x = randf_range(min_x + 100, max_x - 100)
+			var min_y = viewport_rect.position.y
+			var max_y = viewport_rect.size.y
+			var random_y = randf_range(min_y + 100, max_y - 100)
+			advertencia.position.x = random_x
+			advertencia.position.y = random_y
+			enemigo.position.x = random_x
+			enemigo.position.y = random_y
+			add_child(advertencia)
+			await get_tree().create_timer(3).timeout
+			add_child(enemigo)
+			
+			intervalo_enemigo2 = false
+			await get_tree().create_timer(10).timeout
+			intervalo_enemigo2 = true
+		
+
+func generar_asteroide():
+	while true:
+		if intervalo_asteroide:
+			var asteroide = preload(\"res://Escenas/asteroide.tscn\").instantiate()
+			var viewport_rect = get_viewport_rect()
+			var min_x = viewport_rect.position.x
+			var max_x = viewport_rect.size.x
+			var random_x = randf_range(min_x, max_x)
+			asteroide.position.x = random_x
+			asteroide.position.y = -20
+			# Establecer una rotación aleatoria para el asteroide
+			asteroide.rotation = randf_range(0, PI * 2)
+			# Establecer una escala aleatoria para el asteroide
+			# var random_scale = randf_range(0.5, 1.5)  # Esta porqueira no sirve 
+			# asteroide.scale = Vector2(random_scale, random_scale) no entiendo el uso de vectores por ahora
+			
+			# Añadir el asteroide a la escena
+			add_child(asteroide)
+			# Crear un temporizador y conectarlo para que el asteroide desaparezca después de cierto tiempo
+			var timer = Timer.new()
+			timer.wait_time = 6  # El tiempo que el asteroide permanezca en la escena
+			timer.one_shot = true
+			timer.connect(\"timeout\", Callable(self, \"_on_timer_timeout\").bind(asteroide))
+			asteroide.add_child(timer)
+			timer.start()
+
+			intervalo_asteroide = false
+			await get_tree().create_timer(0.5).timeout #Tiempo de s pawn entre asteroides
+			intervalo_asteroide = true
+
+func _on_timer_timeout(body):
+	if body:
+		body.queue_free()  # Eliminar escena despues del contador
+		
+var intervalo_power_up = true
+func generar_PowerUp():
+	while true:
+		if intervalo_power_up:
+			var random_number = randi() % 4
+			var power_up
+			if random_number == 0:
+				power_up = preload(\"res://Escenas/PorVelocidad.tscn\").instantiate()
+			elif  random_number == 1:
+				power_up = preload(\"res://Escenas/HeavyMachingun.tscn\").instantiate()
+			elif  random_number == 2:
+				power_up = preload(\"res://Escenas/PorVelocidad.tscn\").instantiate()
+			elif  random_number == 3:
+				power_up = preload(\"res://Escenas/HeavyMachingun.tscn\").instantiate()
+			var viewport_rect = get_viewport_rect()
+			var min_x = viewport_rect.position.x
+			var max_x = viewport_rect.size.x
+			var random_x = randf_range(min_x + 100, max_x - 100)
+			var min_y = viewport_rect.position.y
+			var max_y = viewport_rect.size.y
+			var random_y = randf_range(min_y + 100, max_y - 100)
+			power_up.position.x = random_x
+			power_up.position.y = random_y
+			add_child(power_up)
+			var timer = Timer.new()
+			timer.wait_time = 10 #Tiempo que se queda (Me encanta reciclar)
+			timer.one_shot = true
+			timer.connect(\"timeout\", Callable(self, \"_on_timer_timeout\").bind(power_up))
+			power_up.add_child(timer)
+			timer.start()
+			intervalo_power_up = false
+			await get_tree().create_timer(20).timeout
+			intervalo_power_up = true
+
+var intervalo_estrella1 = true
+var intervalo_estrella2 = true
+var intervalo_planeta = true
+func generarEstrellas():
+	if intervalo_estrella1:
+		var estrella = preload(\"res://Escenas/Estrella1.tscn\").instantiate()
+		var viewport_rect = get_viewport_rect()
+		var min_x = viewport_rect.position.x
+		var max_x = viewport_rect.size.x
+		var random_x = randf_range(min_x, max_x)
+		estrella.position.x = random_x
+		add_child(estrella)
+		var timer = Timer.new()
+		timer.wait_time = 15
+		timer.one_shot = true
+		timer.connect(\"timeout\", Callable(self, \"_on_timer_timeout\").bind(estrella))
+		estrella.add_child(timer)
+		timer.start()
+		intervalo_estrella1 = false
+		await get_tree().create_timer(0.5).timeout
+		intervalo_estrella1 = true
+	if intervalo_estrella2:
+		var estrella = preload(\"res://Escenas/Estrella2.tscn\").instantiate()
+		var viewport_rect = get_viewport_rect()
+		var min_x = viewport_rect.position.x
+		var max_x = viewport_rect.size.x
+		var random_x = randf_range(min_x, max_x)
+		estrella.position.x = random_x
+		add_child(estrella)
+		var timer = Timer.new()
+		timer.wait_time = 10
+		timer.one_shot = true
+		timer.connect(\"timeout\", Callable(self, \"_on_timer_timeout\").bind(estrella))
+		estrella.add_child(timer)
+		timer.start()
+		intervalo_estrella2 = false
+		await get_tree().create_timer(3).timeout
+		intervalo_estrella2 = true
+	if intervalo_planeta:
+		var planeta
+		var random_number = randi() % 4  # randi() devuelve un número entero aleatorio
+		if random_number == 0:
+			planeta = preload(\"res://Escenas/Planeta1.tscn\").instantiate()
+		elif  random_number == 1:
+			planeta = preload(\"res://Escenas/Planeta2.tscn\").instantiate()
+		elif  random_number == 2:
+			planeta = preload(\"res://Escenas/Planeta3.tscn\").instantiate()
+		elif  random_number == 3:
+			planeta = preload(\"res://Escenas/Planeta4.tscn\").instantiate()
+		if planeta:
+			var viewport_rect = get_viewport_rect()
+			var min_x = viewport_rect.position.x
+			var max_x = viewport_rect.size.x
+			var random_x = randf_range(min_x, max_x)
+			planeta.position.x = random_x
+			planeta.position.y = -250
+			add_child(planeta)
+			var timer = Timer.new()
+			timer.wait_time = 30
+			timer.one_shot = true
+			timer.connect(\"timeout\", Callable(self, \"_on_timer_timeout\").bind(planeta))
+			planeta.add_child(timer)
+			timer.start()
+			intervalo_planeta = false
+			print(\"Planeta\")
+			await get_tree().create_timer(40).timeout
+			intervalo_planeta = true
+
+var intervalo_enemigos = true
+func generarFilaEnemigos():
+	while true:
+		if intervalo_enemigos:
+			var enemigo = preload(\"res://Escenas/OrganizacionEnemigos/FilaEnemigos1.tscn\").instantiate()
+			var viewport_rect = get_viewport_rect()
+			var min_x = viewport_rect.position.x
+			var max_x = viewport_rect.size.x
+			var random_x = randf_range(min_x + 150, max_x - 150)
+			enemigo.position.x = random_x
+			add_child(enemigo)
+			var timer = Timer.new()
+			timer.wait_time = 50
+			timer.one_shot = true
+			timer.connect(\"timeout\", Callable(self, \"_on_timer_timeout\").bind(enemigo))
+			enemigo.add_child(timer)
+			timer.start()
+			intervalo_enemigos = false
+			await get_tree().create_timer(20).timeout
+			intervalo_enemigos = true
+"
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8crpi"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7piqt"]
+a = Vector2(1920, 21)
+b = Vector2(5, 22)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ttjyk"]
+a = Vector2(14, 17)
+b = Vector2(13, 1096)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xaa5u"]
+b = Vector2(1922, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_epiip"]
+b = Vector2(0, 1083)
+
+[node name="Espacio" type="Node2D"]
+script = SubResource("GDScript_v66tu")
+
+[node name="Fondo" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(965, 581)
+scale = Vector2(2.51375, 2.9325)
+texture = ExtResource("1_h8ypk")
+
+[node name="Bordes" type="StaticBody2D" parent="."]
+position = Vector2(-9.99896, -15.9992)
+scale = Vector2(1, 0.999999)
+physics_material_override = SubResource("PhysicsMaterial_8crpi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bordes"]
+position = Vector2(8, -6)
+shape = SubResource("SegmentShape2D_7piqt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bordes"]
+position = Vector2(0, 13)
+shape = SubResource("SegmentShape2D_ttjyk")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Bordes"]
+position = Vector2(7, 1099)
+shape = SubResource("SegmentShape2D_xaa5u")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Bordes"]
+position = Vector2(1929, 15)
+shape = SubResource("SegmentShape2D_epiip")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(968, 1592)
+energy = 0.28
+shadow_enabled = true

@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://bck21rm7jy654"]
+
+[ext_resource type="PackedScene" uid="uid://c31u46fwu1n7f" path="res://Escenas/Advertencia.tscn" id="1_3ar4o"]
+[ext_resource type="Script" path="res://Escenas/Enemigos/adevertenciaJefe.gd" id="1_nbl38"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_nbl38")
+
+[node name="Node2D" parent="." instance=ExtResource("1_3ar4o")]
+
+[node name="Node2D2" parent="." instance=ExtResource("1_3ar4o")]
+position = Vector2(-128, 0)
+
+[node name="Node2D3" parent="." instance=ExtResource("1_3ar4o")]
+position = Vector2(128, 0)
+
+[node name="Node2D4" parent="." instance=ExtResource("1_3ar4o")]
+position = Vector2(384, 0)
+
+[node name="Node2D5" parent="." instance=ExtResource("1_3ar4o")]
+position = Vector2(256, 0)
+
+[node name="Node2D6" parent="." instance=ExtResource("1_3ar4o")]
+position = Vector2(512, 0)
+
+[node name="Node2D7" parent="." instance=ExtResource("1_3ar4o")]
+position = Vector2(-384, 0)
+
+[node name="Node2D8" parent="." instance=ExtResource("1_3ar4o")]
+position = Vector2(-512, 0)
+
+[node name="Node2D9" parent="." instance=ExtResource("1_3ar4o")]
+position = Vector2(-256, 0)

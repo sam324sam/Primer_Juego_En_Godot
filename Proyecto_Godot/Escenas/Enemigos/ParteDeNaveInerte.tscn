@@ -1,0 +1,80 @@
+[gd_scene load_steps=13 format=3 uid="uid://vq8njuu5pnmo"]
+
+[ext_resource type="Script" path="res://Escenas/Enemigos/ParteDeNaveInerte.gd" id="1_uprm2"]
+[ext_resource type="Texture2D" uid="uid://4xgnb5lpouap" path="res://Assets/Jefe1/ParteNave.png" id="1_ychkf"]
+[ext_resource type="Texture2D" uid="uid://d1bj5sb6iafmk" path="res://Assets/Jefe1/Fuego2/pixil-frame-0.png" id="2_avx3u"]
+[ext_resource type="Texture2D" uid="uid://da2xjiod8h415" path="res://Assets/Jefe1/Fuego2/pixil-frame-1.png" id="2_dtams"]
+[ext_resource type="Texture2D" uid="uid://dk26ujbjx7sy7" path="res://Assets/Jefe1/Fuego2/pixil-frame-2.png" id="3_x55cf"]
+[ext_resource type="Texture2D" uid="uid://1457w72o8hww" path="res://Assets/Jefe1/Fuego2/pixil-frame-3.png" id="4_8cx4d"]
+[ext_resource type="Texture2D" uid="uid://bgt8iq6ax5rao" path="res://Assets/Jefe1/Fuego2/pixil-frame-4.png" id="5_wi5id"]
+[ext_resource type="Texture2D" uid="uid://bvm0q8j6ajd3f" path="res://Assets/Jefe1/Fuego2/pixil-frame-5.png" id="6_sa6fg"]
+
+[sub_resource type="Animation" id="Animation_66ykp"]
+resource_name = "Loop"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_avx3u"), ExtResource("2_dtams"), ExtResource("3_x55cf"), ExtResource("4_8cx4d"), ExtResource("5_wi5id"), ExtResource("6_sa6fg")]
+}
+
+[sub_resource type="Animation" id="Animation_sowso"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_avx3u")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qhb8e"]
+_data = {
+"Loop": SubResource("Animation_66ykp"),
+"RESET": SubResource("Animation_sowso")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6e8ae"]
+radius = 120.0
+height = 608.0
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_uprm2")
+
+[node name="Fuego" type="Sprite2D" parent="."]
+position = Vector2(8, -408)
+scale = Vector2(20.3125, 15.875)
+texture = ExtResource("2_avx3u")
+
+[node name="Loop" type="AnimationPlayer" parent="Fuego"]
+libraries = {
+"": SubResource("AnimationLibrary_qhb8e")
+}
+autoplay = "Loop"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 0)
+scale = Vector2(17, 15)
+texture = ExtResource("1_ychkf")
+
+[node name="Area2D" type="Area2D" parent="." groups=["balaEnemigo"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["balaEnemigo"]]
+position = Vector2(0, -56)
+shape = SubResource("CapsuleShape2D_6e8ae")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

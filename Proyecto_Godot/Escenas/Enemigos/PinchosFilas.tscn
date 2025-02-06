@@ -1,0 +1,664 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5ckqkxnqutgr"]
+
+[ext_resource type="Script" path="res://Escenas/Enemigos/PinchosFilas.gd" id="1_mhlvi"]
+[ext_resource type="PackedScene" uid="uid://dnek07bun2n3g" path="res://Escenas/Enemigos/Pinchos.tscn" id="1_x63am"]
+[ext_resource type="PackedScene" uid="uid://d74vjui2dto7" path="res://Escenas/Enemigos/PinchosAdvertencia.tscn" id="2_g0sy4"]
+
+[sub_resource type="Animation" id="Animation_m24kn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Advertencias/Node2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Advertencias/Node2D2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Advertencias/Node2D3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Advertencias/Node2D4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Advertencias/Node2D5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Advertencias/Node2D6:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Advertencias/Node2D7:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Advertencias/Node2D8:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Advertencias/Node2D9:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Advertencias/Node2D10:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Advertencias/Node2D11:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Advertencias/Node2D12:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Advertencias/Node2D13:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Advertencias/Node2D14:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Arriba/Columna:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(192, -72)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Arriba/Columna2:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(440, -72)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Arriba/Columna3:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(696, -72)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Arriba/Columna4:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(944, -72)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Arriba/Columna5:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1216, -72)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Arriba/Columna6:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1464, -72)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Arriba/Columna7:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1720, -72)]
+}
+
+[sub_resource type="Animation" id="Animation_8ehg2"]
+resource_name = "entrar"
+length = 6.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Advertencias/Node2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Advertencias/Node2D2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Advertencias/Node2D3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Advertencias/Node2D4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Advertencias/Node2D5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.8, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Advertencias/Node2D6:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.8, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Advertencias/Node2D7:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.6, 3.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Advertencias/Node2D8:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.6, 3.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Advertencias/Node2D9:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 3.4, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Advertencias/Node2D10:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 3.4, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Advertencias/Node2D11:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 4.2, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Advertencias/Node2D12:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 4.2, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Advertencias/Node2D13:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 5, 5.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Advertencias/Node2D14:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 5, 5.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Arriba/Columna:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(1, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(192, -72), Vector2(192, 1200)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Arriba/Columna2:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(1.8, 2.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(440, -72), Vector2(440, 1200)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Arriba/Columna3:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(2.6, 3.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(696, -72), Vector2(696, 1200)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Arriba/Columna4:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(3.4, 4.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(944, -72), Vector2(944, 1200)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Arriba/Columna5:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(4.2, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1216, -72), Vector2(1216, 1200)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Arriba/Columna6:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(5, 5.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1464, -72), Vector2(1464, 1200)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Arriba/Columna7:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(5.8, 6.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1720, -72), Vector2(1720, 1200)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8fm2g"]
+_data = {
+"RESET": SubResource("Animation_m24kn"),
+"entrar": SubResource("Animation_8ehg2")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_mhlvi")
+
+[node name="Arriba" type="Node2D" parent="."]
+
+[node name="Columna" type="Node2D" parent="Arriba"]
+position = Vector2(192, -72)
+
+[node name="Node2D" parent="Arriba/Columna" instance=ExtResource("1_x63am")]
+position = Vector2(-64, 0)
+
+[node name="Node2D2" parent="Arriba/Columna" instance=ExtResource("1_x63am")]
+position = Vector2(64, 0)
+rotation = -0.00231852
+
+[node name="Columna2" type="Node2D" parent="Arriba"]
+position = Vector2(440, -72)
+
+[node name="Node2D" parent="Arriba/Columna2" instance=ExtResource("1_x63am")]
+position = Vector2(-64, 0)
+
+[node name="Node2D2" parent="Arriba/Columna2" instance=ExtResource("1_x63am")]
+position = Vector2(64, 0)
+rotation = -0.00231852
+
+[node name="Columna3" type="Node2D" parent="Arriba"]
+position = Vector2(696, -72)
+rotation = -0.00108508
+
+[node name="Node2D" parent="Arriba/Columna3" instance=ExtResource("1_x63am")]
+position = Vector2(-64, 0)
+
+[node name="Node2D2" parent="Arriba/Columna3" instance=ExtResource("1_x63am")]
+position = Vector2(64, 0)
+rotation = -0.00231852
+
+[node name="Columna4" type="Node2D" parent="Arriba"]
+position = Vector2(944, -72)
+rotation = -0.00108508
+
+[node name="Node2D" parent="Arriba/Columna4" instance=ExtResource("1_x63am")]
+position = Vector2(-64, 0)
+
+[node name="Node2D2" parent="Arriba/Columna4" instance=ExtResource("1_x63am")]
+position = Vector2(64, 0)
+rotation = -0.00231852
+
+[node name="Columna5" type="Node2D" parent="Arriba"]
+position = Vector2(1216, -72)
+
+[node name="Node2D" parent="Arriba/Columna5" instance=ExtResource("1_x63am")]
+position = Vector2(-64, 0)
+
+[node name="Node2D2" parent="Arriba/Columna5" instance=ExtResource("1_x63am")]
+position = Vector2(64, 0)
+rotation = -0.00231852
+
+[node name="Columna6" type="Node2D" parent="Arriba"]
+position = Vector2(1464, -72)
+
+[node name="Node2D" parent="Arriba/Columna6" instance=ExtResource("1_x63am")]
+position = Vector2(-64, 0)
+
+[node name="Node2D2" parent="Arriba/Columna6" instance=ExtResource("1_x63am")]
+position = Vector2(64, 0)
+rotation = -0.00231852
+
+[node name="Columna7" type="Node2D" parent="Arriba"]
+position = Vector2(1720, -72)
+rotation = -0.00108508
+
+[node name="Node2D" parent="Arriba/Columna7" instance=ExtResource("1_x63am")]
+position = Vector2(-64, 0)
+
+[node name="Node2D2" parent="Arriba/Columna7" instance=ExtResource("1_x63am")]
+position = Vector2(64, 0)
+rotation = -0.00231852
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8fm2g")
+}
+autoplay = "entrar"
+
+[node name="Advertencias" type="Node2D" parent="."]
+
+[node name="Node2D" parent="Advertencias" instance=ExtResource("2_g0sy4")]
+visible = false
+position = Vector2(128, 64)
+
+[node name="Node2D2" parent="Advertencias" instance=ExtResource("2_g0sy4")]
+visible = false
+position = Vector2(256, 64)
+
+[node name="Node2D3" parent="Advertencias" instance=ExtResource("2_g0sy4")]
+visible = false
+position = Vector2(376, 64)
+
+[node name="Node2D4" parent="Advertencias" instance=ExtResource("2_g0sy4")]
+visible = false
+position = Vector2(504, 64)
+
+[node name="Node2D5" parent="Advertencias" instance=ExtResource("2_g0sy4")]
+visible = false
+position = Vector2(632, 64)
+
+[node name="Node2D6" parent="Advertencias" instance=ExtResource("2_g0sy4")]
+visible = false
+position = Vector2(760, 64)
+
+[node name="Node2D7" parent="Advertencias" instance=ExtResource("2_g0sy4")]
+visible = false
+position = Vector2(888, 64)
+
+[node name="Node2D8" parent="Advertencias" instance=ExtResource("2_g0sy4")]
+visible = false
+position = Vector2(1008, 64)
+
+[node name="Node2D9" parent="Advertencias" instance=ExtResource("2_g0sy4")]
+visible = false
+position = Vector2(1152, 64)
+
+[node name="Node2D10" parent="Advertencias" instance=ExtResource("2_g0sy4")]
+visible = false
+position = Vector2(1280, 64)
+
+[node name="Node2D11" parent="Advertencias" instance=ExtResource("2_g0sy4")]
+visible = false
+position = Vector2(1400, 64)
+
+[node name="Node2D12" parent="Advertencias" instance=ExtResource("2_g0sy4")]
+visible = false
+position = Vector2(1528, 64)
+
+[node name="Node2D13" parent="Advertencias" instance=ExtResource("2_g0sy4")]
+visible = false
+position = Vector2(1656, 64)
+
+[node name="Node2D14" parent="Advertencias" instance=ExtResource("2_g0sy4")]
+visible = false
+position = Vector2(1784, 64)

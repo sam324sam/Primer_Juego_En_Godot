@@ -1,0 +1,512 @@
+[gd_scene load_steps=35 format=3 uid="uid://wpcqwttjo1c"]
+
+[ext_resource type="Script" path="res://Escenas/Jugador.gd" id="1_rxehh"]
+[ext_resource type="Texture2D" uid="uid://xe04fya8exmo" path="res://Assets/Nave.png" id="2_a25kk"]
+[ext_resource type="Texture2D" uid="uid://qcev0r3v27ws" path="res://Assets/Fuego.png" id="3_kxsad"]
+[ext_resource type="Texture2D" uid="uid://bv2i3jmxmkiab" path="res://Assets/Fuego3.png" id="5_lg3ev"]
+[ext_resource type="Texture2D" uid="uid://bnryqbp3jbkpg" path="res://Assets/Fuego4.png" id="6_uls8w"]
+[ext_resource type="Texture2D" uid="uid://btndpil2ka4kd" path="res://Assets/Fuego5.png" id="7_qhv8p"]
+[ext_resource type="Texture2D" uid="uid://dlrnjk1qyxnjf" path="res://Assets/Fuego7.png" id="8_ul6rp"]
+[ext_resource type="Texture2D" uid="uid://biav2umgoql6v" path="res://Assets/NaveExplota1.png" id="8_wl01q"]
+[ext_resource type="Texture2D" uid="uid://5y8tcvj7ckf2" path="res://Assets/NaveExplota2.png" id="9_fud4x"]
+[ext_resource type="Texture2D" uid="uid://blq6c0vn4n3sc" path="res://Assets/NaveExplota3.png" id="10_vns0i"]
+[ext_resource type="Texture2D" uid="uid://80rtmeu414yr" path="res://Assets/NaveExplota4.png" id="11_rb1e8"]
+[ext_resource type="Texture2D" uid="uid://hkex0ufo07gv" path="res://Assets/NaveExplota5.png" id="12_bj8xd"]
+[ext_resource type="Shader" path="res://Escenas/Shaders/escudoJugador.gdshader" id="13_xcs61"]
+[ext_resource type="Texture2D" uid="uid://crtk425mw5oeq" path="res://Assets/texturaEscudo.webp" id="14_o2aol"]
+[ext_resource type="Texture2D" uid="uid://dryficj46r4q3" path="res://Assets/texturaEscudo2.webp" id="15_r0qvg"]
+[ext_resource type="Texture2D" uid="uid://gvtwoi2a2dg4" path="res://Assets/BarraEscudo.png" id="16_ysgk3"]
+[ext_resource type="Texture2D" uid="uid://khax7jjistoo" path="res://Assets/Escudo.png" id="17_l1xr6"]
+
+[sub_resource type="Animation" id="Animation_8c0tw"]
+resource_name = "Explotar"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.9, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Nave:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_a25kk"), ExtResource("8_wl01q"), ExtResource("9_fud4x"), ExtResource("10_vns0i"), ExtResource("11_rb1e8"), ExtResource("12_bj8xd"), ExtResource("2_a25kk")]
+}
+
+[sub_resource type="Animation" id="Animation_tnx7v"]
+resource_name = "Fuego"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_kxsad"), ExtResource("5_lg3ev"), ExtResource("6_uls8w"), ExtResource("7_qhv8p"), ExtResource("8_ul6rp")]
+}
+
+[sub_resource type="Animation" id="Animation_rn1jj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_kxsad")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Nave:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_a25kk")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.387, 1.4)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Nave:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Escudo:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xciuj"]
+resource_name = "arriba"
+length = 90.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Escudo:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Nave:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_a25kk")]
+}
+
+[sub_resource type="Animation" id="Animation_0pvlq"]
+resource_name = "derecha"
+length = 90.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0872665]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Nave:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_a25kk")]
+}
+
+[sub_resource type="Animation" id="Animation_5v0t7"]
+resource_name = "detenido"
+
+[sub_resource type="Animation" id="Animation_xwm07"]
+resource_name = "izquierda"
+length = 90.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.0872665]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Nave:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_a25kk")]
+}
+
+[sub_resource type="Animation" id="Animation_l8fw8"]
+resource_name = "para_arriba"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bk5l5"]
+resource_name = "para_derecha"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0872665, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_fij1e"]
+resource_name = "para"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.0872665, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5jei1"]
+_data = {
+"Explotar": SubResource("Animation_8c0tw"),
+"Fuego": SubResource("Animation_tnx7v"),
+"RESET": SubResource("Animation_rn1jj"),
+"arriba": SubResource("Animation_xciuj"),
+"derecha": SubResource("Animation_0pvlq"),
+"detenido": SubResource("Animation_5v0t7"),
+"izquierda": SubResource("Animation_xwm07"),
+"para_arriba": SubResource("Animation_l8fw8"),
+"para_derecha": SubResource("Animation_bk5l5"),
+"para_izquierda": SubResource("Animation_fij1e")
+}
+
+[sub_resource type="Animation" id="Animation_fb6mj"]
+resource_name = "Inmortal"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FuegoJs:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nave:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FuegoJs:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_2reun"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FuegoJs:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nave:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FuegoJs:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1dtvr"]
+_data = {
+"Inmortal": SubResource("Animation_fb6mj"),
+"RESET": SubResource("Animation_2reun")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ta4s"]
+radius = 31.0
+height = 80.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g0cul"]
+radius = 38.0526
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jutpc"]
+shader = ExtResource("13_xcs61")
+shader_parameter/brightness = -10.0
+shader_parameter/time_scale = 1.0
+shader_parameter/noise = ExtResource("14_o2aol")
+shader_parameter/noise2 = ExtResource("15_r0qvg")
+
+[node name="Jugador" type="CharacterBody2D" groups=["jugador"]]
+script = ExtResource("1_rxehh")
+
+[node name="FuegoJs" type="Sprite2D" parent="." groups=["jugador"]]
+z_index = 1
+position = Vector2(5.96856e-13, 34)
+rotation = 3.14159
+scale = Vector2(1.387, 1.4)
+texture = ExtResource("3_kxsad")
+
+[node name="AnimationPlayer_Fuego" type="AnimationPlayer" parent="." groups=["jugador"]]
+root_node = NodePath("../FuegoJs")
+libraries = {
+"": SubResource("AnimationLibrary_5jei1")
+}
+autoplay = "Fuego"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["jugador"]]
+root_node = NodePath("../FuegoJs")
+libraries = {
+"": SubResource("AnimationLibrary_5jei1")
+}
+autoplay = "Fuego"
+
+[node name="Inmortal" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1dtvr")
+}
+
+[node name="Nave" type="Sprite2D" parent="." groups=["jugador"]]
+z_index = 2
+position = Vector2(1, -16)
+scale = Vector2(3.4375, 2.98438)
+texture = ExtResource("2_a25kk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["jugador"]]
+visible = false
+position = Vector2(1, -15)
+shape = SubResource("CapsuleShape2D_7ta4s")
+
+[node name="Area2D" type="Area2D" parent="." groups=["jugador"]]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["jugador"]]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_g0cul")
+
+[node name="VidaEscudo" type="ColorRect" parent="."]
+z_index = 4
+offset_left = -50.0
+offset_top = 64.0
+offset_right = 50.0
+offset_bottom = 72.0
+color = Color(1.34766e-06, 0.815521, 0.907927, 1)
+
+[node name="Escudo" type="ColorRect" parent="."]
+z_index = 2
+material = SubResource("ShaderMaterial_jutpc")
+offset_left = -168.0
+offset_top = -168.0
+offset_right = 168.0
+offset_bottom = 152.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7.62939e-06, 60)
+scale = Vector2(8.375, 2.25)
+texture = ExtResource("16_ysgk3")
+
+[node name="Escudo2" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(-59, 66)
+scale = Vector2(1.5, 1)
+texture = ExtResource("17_l1xr6")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

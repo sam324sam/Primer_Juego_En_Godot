@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0t5t2vxcxc0f"]
+
+[ext_resource type="Texture2D" uid="uid://dqww7sludj15h" path="res://Assets/Escenario/Planeta3.png" id="1_nabfe"]
+[ext_resource type="Script" path="res://Escenas/Scripts/Escenario/Planeta3.gd" id="2_wybg7"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.470076, 0.470076, 0.470076, 1)
+z_index = -2
+scale = Vector2(-6.75941, 4.6267)
+texture = ExtResource("1_nabfe")
+script = ExtResource("2_wybg7")
