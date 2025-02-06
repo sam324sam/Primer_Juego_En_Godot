@@ -28,11 +28,14 @@ Este juego fue creado como un reto personal para aprender Godot durante un mes. 
 - **Sprites**: Todos los sprites utilizados en el juego fueron creados por mí.
   
 ## Instrucciones
-
+**Para el codigo fuente**
 1. Clona o descarga el repositorio.
-2. Abre el proyecto en Godot.
-3. Ejecuta el juego desde el editor de Godot para jugar.
-4. Usa las teclas para moverte y disparar (configurables en el proyecto).
+2. Descomprima el archivo Proyecto Godot
+3. Abre el proyecto en Godot.
+4. Ejecuta el juego desde el editor de Godot para jugar.
+5. Usa las teclas para moverte y disparar.
+**Para solo probarlo**
+1. Descarge el ejecutable que desee y a disfrutar.
 
 ## Ejecutables
 
