@@ -41,6 +41,10 @@ El repositorio contiene ejecutables para **escritorio** y **dispositivos móvile
 - **Escritorio**: Ejecutables disponibles para Windows, Linux y MacOS.
 - **Móviles**: Se incluyen APKs para Android. Sin embargo, ten en cuenta que **la versión móvil no está completamente probada ni es segura**, por lo que se recomienda tener precaución al instalarla.
 
+## Estado del Proyecto
+
+Este proyecto se encuentra en una **fase temprana e inestable**. Algunas mecánicas pueden no funcionar perfectamente, y el rendimiento podría no ser óptimo. Sin embargo, sigue siendo una buena base para experimentar y aprender más sobre Godot.
+
 ## Acepto Contribuciones
 
 Aunque el proyecto no continuará activamente en desarrollo, **se aceptan contribuciones**. Si deseas ayudar a mejorar el juego, ya sea en términos de estabilidad, funcionalidad o incluso añadiendo contenido adicional, no dudes en enviar un pull request. Cualquier aporte será apreciado.
@@ -48,5 +52,4 @@ Aunque el proyecto no continuará activamente en desarrollo, **se aceptan contri
 ## Agradecimientos
 
 Gracias a la comunidad de Godot por su constante apoyo y a todos los recursos gratuitos disponibles en línea que me ayudaron a aprender más rápido.
-El addon para la version movil es gracias a
-Y la musica los creadores estan en el AtribucionSonidos.txt del archivo raiz
+La atribuciones a la musica se encuentran en el archivo .txt de la raiz del repositorio
