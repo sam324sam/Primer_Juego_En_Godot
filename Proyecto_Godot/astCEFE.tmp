@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://dn474dmq6c06y"]
+
+[ext_resource type="Texture2D" uid="uid://dpog0ec8npn3c" path="res://Assets/Roca.png" id="1_nited"]
+[ext_resource type="Script" path="res://asteroide.gd" id="1_qhks3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_08vfv"]
+radius = 17.0
+
+[sub_resource type="Animation" id="Animation_382oc"]
+resource_name = "rota"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_vtrhn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d8fjj"]
+_data = {
+"RESET": SubResource("Animation_vtrhn"),
+"rota": SubResource("Animation_382oc")
+}
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3741j"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_qhks3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_08vfv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.375, 1.3125)
+texture = ExtResource("1_nited")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_d8fjj")
+}
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_3741j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+visible = false
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_08vfv")
