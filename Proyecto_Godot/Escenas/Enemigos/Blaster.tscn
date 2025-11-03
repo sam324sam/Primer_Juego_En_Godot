@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://d0rpras1t7rpw"]
 
-[ext_resource type="Texture2D" uid="uid://3fm68mdtm8ya" path="res://Assets/Jefe1/ataque1Fase2/Ataque1Fase2Blaster.png" id="1_5undw"]
-[ext_resource type="Script" path="res://Escenas/Enemigos/Blaster.gd" id="1_ccoua"]
-[ext_resource type="Shader" path="res://Escenas/Shaders/Bomba.gdshader" id="3_ynk8p"]
+[ext_resource type="Texture2D" uid="uid://blwbdoyprnhj0" path="res://Assets/Jefe1/ataque1Fase2/BlasterJefe1Fase2.png" id="1_5undw"]
+[ext_resource type="Script" uid="uid://dejml7tdnb2xi" path="res://Escenas/Enemigos/Blaster.gd" id="1_ccoua"]
+[ext_resource type="Shader" uid="uid://ds5w88dmjfywh" path="res://Escenas/Shaders/Bomba.gdshader" id="3_ynk8p"]
 [ext_resource type="Texture2D" uid="uid://clcwmvuocq0ra" path="res://Assets/Jefe1/apuntado.png" id="4_0op7r"]
-[ext_resource type="AudioStream" uid="uid://b7husv5eks77s" path="res://Assets/Jefe1/35436__fons__synth-alarm-14.mp3" id="5_tmhak"]
+[ext_resource type="AudioStream" uid="uid://b5ulkugtbnshe" path="res://Assets/laser.mp3" id="5_tmhak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3dfs"]
 size = Vector2(5, 5)

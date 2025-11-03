@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=3 uid="uid://cmgkpvfauy1aw"]
 
-[ext_resource type="Texture2D" uid="uid://bpe35k1bc78mc" path="res://Assets/VidaNave.png" id="1_8f023"]
-[ext_resource type="Script" path="res://Escenas/Scripts/vida.gd" id="1_tve7i"]
-[ext_resource type="Script" path="res://Escenas/Scripts/TimerLabel.gd" id="3_bco1t"]
+[ext_resource type="Texture2D" uid="uid://bpe35k1bc78mc" path="res://Assets/Player/VidaNave.png" id="1_8f023"]
+[ext_resource type="Script" uid="uid://rkma6bjd1tb2" path="res://Escenas/Scripts/vida.gd" id="1_tve7i"]
+[ext_resource type="Script" uid="uid://p5fdjr0glto7" path="res://Escenas/Scripts/TimerLabel.gd" id="3_bco1t"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="4_2mexk"]
 [ext_resource type="Texture2D" uid="uid://clcwmvuocq0ra" path="res://Assets/Jefe1/apuntado.png" id="6_adhqn"]
 [ext_resource type="PackedScene" uid="uid://csus4nrutve3u" path="res://Assets/Menu/OpcionesPausa.tscn" id="7_3xvxn"]
-[ext_resource type="Script" path="res://Escenas/Scripts/Node2D.gd" id="7_brrks"]
+[ext_resource type="Script" uid="uid://cxx1h03p63nfg" path="res://Escenas/Scripts/Node2D.gd" id="7_brrks"]
 [ext_resource type="Texture2D" uid="uid://bm5ok2fgslhcp" path="res://Assets/Jefe1/apuntadoN.png" id="7_e2sbr"]
 
 [sub_resource type="Animation" id="Animation_spje5"]

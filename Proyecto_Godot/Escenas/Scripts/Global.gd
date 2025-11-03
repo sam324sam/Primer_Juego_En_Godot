@@ -5,5 +5,5 @@ var dañoAlJugador = 0
 var posicionJugador = 0
 var tiempo = 0
 var cambiarEscena = ""
-var inmortal = false
+var inmortal = true
 var android = false

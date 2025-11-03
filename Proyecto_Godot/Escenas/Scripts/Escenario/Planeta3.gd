@@ -17,4 +17,3 @@ func aumentar():
 		caida = 4
 	elif Input.is_action_just_released("arriba"):
 		caida = 1
-

@@ -3,7 +3,7 @@ var daño = 50
 var velocidad = 10
 var inpacto = false
 
-func  _physics_process(delta):
+func  _physics_process(_delta):
 	position.y -= velocidad
 	
 func _ready():

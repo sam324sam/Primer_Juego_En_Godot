@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://bugndnho20alx"]
 
-[ext_resource type="Shader" path="res://Escenas/Shaders/espacio.gdshader" id="1_o5cuq"]
-[ext_resource type="Script" path="res://Assets/Menu/Menu.gd" id="1_wyid5"]
+[ext_resource type="Shader" uid="uid://bq5jw8b2y2f4x" path="res://Escenas/Shaders/espacio.gdshader" id="1_o5cuq"]
+[ext_resource type="Script" uid="uid://cb7jlqwi11ds8" path="res://Assets/Menu/Menu.gd" id="1_wyid5"]
 [ext_resource type="Texture2D" uid="uid://dlmxbqcxpp3pi" path="res://Assets/Menu/IconJugar.png" id="2_jb0mx"]
 [ext_resource type="Texture2D" uid="uid://dm6oxvxudd2jy" path="res://Assets/Menu/IconSalir.png" id="4_8lws6"]
 [ext_resource type="FontFile" uid="uid://balefipo02o67" path="res://Fuentes/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/poco/Poco.ttf" id="5_igpc4"]
 [ext_resource type="Texture2D" uid="uid://1dj688eaxv5q" path="res://Assets/Menu/IconOpciones.png" id="6_a6efh"]
 [ext_resource type="PackedScene" uid="uid://bkg11a3spnfye" path="res://Assets/Menu/Opciones.tscn" id="9_m570e"]
 [ext_resource type="AudioStream" uid="uid://bp4q3vup652jb" path="res://Assets/Menu/MenuMusica.mp3" id="11_gw3ee"]
-[ext_resource type="Script" path="res://Assets/Menu/AudioMenu.gd" id="12_u5l7p"]
+[ext_resource type="Script" uid="uid://cybno1uwkpi7o" path="res://Assets/Menu/AudioMenu.gd" id="12_u5l7p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_54kb5"]
 shader = ExtResource("1_o5cuq")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bfyr2gmpwuuav"]
 
-[ext_resource type="Script" path="res://Escenas/Enemigos/DsiparoEnemigo2.gd" id="1_kt2nj"]
+[ext_resource type="Script" uid="uid://d5sg3xhyr8tr" path="res://Escenas/Enemigos/DsiparoEnemigo2.gd" id="1_kt2nj"]
 [ext_resource type="Texture2D" uid="uid://bcrf04x0o5af7" path="res://Assets/Enemigo2/DisparoEnemigo.png" id="2_mad14"]
-[ext_resource type="Texture2D" uid="uid://cbr2ospxwfyo7" path="res://Assets/Enemigo2/Enemigo2Desaparecer13.png" id="3_dmk52"]
+[ext_resource type="Texture2D" uid="uid://cbr2ospxwfyo7" path="res://Assets/Enemigo2/Desaparecer/Enemigo2Desaparecer13.png" id="3_dmk52"]
 
 [sub_resource type="Animation" id="Animation_be7wg"]
 length = 0.001

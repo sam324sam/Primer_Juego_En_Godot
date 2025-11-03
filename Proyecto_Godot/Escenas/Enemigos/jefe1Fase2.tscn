@@ -1,7 +1,7 @@
 [gd_scene load_steps=41 format=3 uid="uid://f26xsthr5j5"]
 
 [ext_resource type="Texture2D" uid="uid://bgst6okpdtjjr" path="res://Assets/Jefe1/cambiofase2/pixil-frame-29.png" id="1_u0a2v"]
-[ext_resource type="Script" path="res://Escenas/Enemigos/jefe1Fase2.gd" id="1_vx70u"]
+[ext_resource type="Script" uid="uid://4ajtdq6gljnn" path="res://Escenas/Enemigos/jefe1Fase2.gd" id="1_vx70u"]
 [ext_resource type="Texture2D" uid="uid://dgf0eniqvqfs5" path="res://Assets/Jefe1/ataque1Fase2/animacion/pixil-frame-1.png" id="2_l0j2p"]
 [ext_resource type="Texture2D" uid="uid://cyvuxj4sk6e85" path="res://Assets/Jefe1/ataque1Fase2/animacion/pixil-frame-2.png" id="3_4dxgg"]
 [ext_resource type="Texture2D" uid="uid://5o86xvxnuhtf" path="res://Assets/Jefe1/ataque1Fase2/animacion/pixil-frame-3.png" id="4_ij16p"]
@@ -430,12 +430,12 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8naaj"]
 _data = {
-"Loop": SubResource("Animation_2mdkc"),
-"RESET": SubResource("Animation_gg12l"),
-"ataque1": SubResource("Animation_nrydq"),
-"ataque2": SubResource("Animation_gtlil"),
-"irse": SubResource("Animation_gkete"),
-"venirse": SubResource("Animation_r87bt")
+&"Loop": SubResource("Animation_2mdkc"),
+&"RESET": SubResource("Animation_gg12l"),
+&"ataque1": SubResource("Animation_nrydq"),
+&"ataque2": SubResource("Animation_gtlil"),
+&"irse": SubResource("Animation_gkete"),
+&"venirse": SubResource("Animation_r87bt")
 }
 
 [node name="Fase2" type="Node2D"]
@@ -457,7 +457,7 @@ shape = SubResource("CircleShape2D_memoy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_8naaj")
+&"": SubResource("AnimationLibrary_8naaj")
 }
 
 [node name="Blaster1" parent="." instance=ExtResource("16_5y0np")]

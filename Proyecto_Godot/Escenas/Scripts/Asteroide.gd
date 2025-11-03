@@ -2,7 +2,7 @@ extends Node2D
 
 var exploto = false
 var gravedad = 5
-func _physics_process(delta):
+func _physics_process(_delta):
 	caida()
 
 func _ready():

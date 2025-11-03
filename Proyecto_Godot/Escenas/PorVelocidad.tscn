@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://bbosb8te0llm2"]
 
-[ext_resource type="Script" path="res://Escenas/Scripts/Por2.gd" id="1_kivjx"]
-[ext_resource type="Texture2D" uid="uid://crn2f0amolvgd" path="res://Assets/Velocidad.png" id="2_3p01s"]
-[ext_resource type="Texture2D" uid="uid://1vctvsoqxrjj" path="res://Assets/desaparecer.png" id="3_ojt7d"]
-[ext_resource type="Texture2D" uid="uid://b63fbeb0q3wpv" path="res://Assets/desaparecer1.png" id="4_tr13u"]
-[ext_resource type="Texture2D" uid="uid://csyukyq1nnuqp" path="res://Assets/desaparecer2.png" id="5_qhjfo"]
-[ext_resource type="Texture2D" uid="uid://cgq7s740d5lu7" path="res://Assets/desaparecer3.png" id="6_c2xme"]
+[ext_resource type="Script" uid="uid://ds2yg36pchjor" path="res://Escenas/Scripts/Por2.gd" id="1_kivjx"]
+[ext_resource type="Texture2D" uid="uid://crn2f0amolvgd" path="res://Assets/PowerUps/Velocidad.png" id="2_3p01s"]
+[ext_resource type="Texture2D" uid="uid://1vctvsoqxrjj" path="res://Assets/PowerUps/desaparecer.png" id="3_ojt7d"]
+[ext_resource type="Texture2D" uid="uid://b63fbeb0q3wpv" path="res://Assets/PowerUps/desaparecer1.png" id="4_tr13u"]
+[ext_resource type="Texture2D" uid="uid://csyukyq1nnuqp" path="res://Assets/PowerUps/desaparecer2.png" id="5_qhjfo"]
+[ext_resource type="Texture2D" uid="uid://cgq7s740d5lu7" path="res://Assets/PowerUps/desaparecer3.png" id="6_c2xme"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_16qo7"]
 radius = 35.0571

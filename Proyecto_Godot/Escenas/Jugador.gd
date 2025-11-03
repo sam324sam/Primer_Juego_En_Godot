@@ -4,9 +4,10 @@ extends CharacterBody2D
 var escudoActivo = true
 var vidaEscudo = 100
 
+var animador = AnimatableBody2D
+
 func get_input():#Ver el input seleccionado Importante ir a configuracion de proyecto y asignar los botones
 	var input_direction = Input.get_vector("izquierda", "derecha", "arriba", "abajo")
-	var animador = AnimatableBody2D
 	animador = $AnimationPlayer
 	velocity = input_direction * speed
 	#Arreglar las animaciones
@@ -30,7 +31,7 @@ func get_input():#Ver el input seleccionado Importante ir a configuracion de pro
 			animacion_anterior = animacion_actual
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	Global.posicionJugador = self.position
 	if !exploto:
 		get_input()

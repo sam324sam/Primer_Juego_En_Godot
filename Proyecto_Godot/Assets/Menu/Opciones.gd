@@ -31,7 +31,7 @@ func _on_efectos_value_changed(value):
 	var volumen = value
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Efectos"), linear_to_db(volumen))
 
-func _on_check_button_toggled(toggled_on):
+func _on_check_button_toggled(_toggled_on):
 	if DisplayServer.window_get_mode() == DisplayServer.WindowMode.WINDOW_MODE_FULLSCREEN:
 		DisplayServer.window_set_mode(DisplayServer.WindowMode.WINDOW_MODE_WINDOWED)
 	else:

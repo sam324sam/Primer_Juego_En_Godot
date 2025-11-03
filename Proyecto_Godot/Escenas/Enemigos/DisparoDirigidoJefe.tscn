@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bwfvi26kga8x7"]
+[gd_scene load_steps=11 format=3 uid="uid://bwfvi26kga8x7"]
 
-[ext_resource type="Script" path="res://Escenas/Enemigos/DisparoDirigidoJefe.gd" id="1_ql80r"]
+[ext_resource type="Script" uid="uid://dxqfg1mgnnc5q" path="res://Escenas/Enemigos/DisparoDirigidoJefe.gd" id="1_ql80r"]
 [ext_resource type="Texture2D" uid="uid://clcwmvuocq0ra" path="res://Assets/Jefe1/apuntado.png" id="2_5ce5c"]
-[ext_resource type="Shader" path="res://Escenas/Shaders/Bomba.gdshader" id="3_ilq4e"]
-[ext_resource type="AudioStream" uid="uid://b7husv5eks77s" path="res://Assets/Jefe1/35436__fons__synth-alarm-14.mp3" id="4_gxsd4"]
+[ext_resource type="Shader" uid="uid://ds5w88dmjfywh" path="res://Escenas/Shaders/Bomba.gdshader" id="3_ilq4e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6gvk"]
 size = Vector2(5, 5)
@@ -112,9 +111,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xyhdk"]
 _data = {
-"Laser": SubResource("Animation_bqtna"),
-"RESET": SubResource("Animation_j2cdd"),
-"apuntadoi": SubResource("Animation_xmno6")
+&"Laser": SubResource("Animation_bqtna"),
+&"RESET": SubResource("Animation_j2cdd"),
+&"apuntadoi": SubResource("Animation_xmno6")
 }
 
 [node name="Node2D" type="Node2D"]
@@ -140,16 +139,10 @@ default_color = Color(1, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_xyhdk")
+&"": SubResource("AnimationLibrary_xyhdk")
 }
 
 [node name="Laser" type="Line2D" parent="."]
 default_color = Color(1, 0, 0, 1)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_gxsd4")
-volume_db = -15.0
-autoplay = true
-bus = &"Efectos"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

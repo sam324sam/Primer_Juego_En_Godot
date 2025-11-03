@@ -4,7 +4,7 @@ func _ready():
 	await get_tree().create_timer(10).timeout #Es mejor que el timer para todo y el rendimiento
 	queue_free()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if !desaparecer:
 		position.y += 10
 

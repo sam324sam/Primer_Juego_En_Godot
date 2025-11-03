@@ -1,22 +1,22 @@
 [gd_scene load_steps=35 format=3 uid="uid://wpcqwttjo1c"]
 
-[ext_resource type="Script" path="res://Escenas/Jugador.gd" id="1_rxehh"]
-[ext_resource type="Texture2D" uid="uid://xe04fya8exmo" path="res://Assets/Nave.png" id="2_a25kk"]
-[ext_resource type="Texture2D" uid="uid://qcev0r3v27ws" path="res://Assets/Fuego.png" id="3_kxsad"]
-[ext_resource type="Texture2D" uid="uid://bv2i3jmxmkiab" path="res://Assets/Fuego3.png" id="5_lg3ev"]
-[ext_resource type="Texture2D" uid="uid://bnryqbp3jbkpg" path="res://Assets/Fuego4.png" id="6_uls8w"]
-[ext_resource type="Texture2D" uid="uid://btndpil2ka4kd" path="res://Assets/Fuego5.png" id="7_qhv8p"]
-[ext_resource type="Texture2D" uid="uid://dlrnjk1qyxnjf" path="res://Assets/Fuego7.png" id="8_ul6rp"]
-[ext_resource type="Texture2D" uid="uid://biav2umgoql6v" path="res://Assets/NaveExplota1.png" id="8_wl01q"]
-[ext_resource type="Texture2D" uid="uid://5y8tcvj7ckf2" path="res://Assets/NaveExplota2.png" id="9_fud4x"]
-[ext_resource type="Texture2D" uid="uid://blq6c0vn4n3sc" path="res://Assets/NaveExplota3.png" id="10_vns0i"]
-[ext_resource type="Texture2D" uid="uid://80rtmeu414yr" path="res://Assets/NaveExplota4.png" id="11_rb1e8"]
-[ext_resource type="Texture2D" uid="uid://hkex0ufo07gv" path="res://Assets/NaveExplota5.png" id="12_bj8xd"]
-[ext_resource type="Shader" path="res://Escenas/Shaders/escudoJugador.gdshader" id="13_xcs61"]
-[ext_resource type="Texture2D" uid="uid://crtk425mw5oeq" path="res://Assets/texturaEscudo.webp" id="14_o2aol"]
-[ext_resource type="Texture2D" uid="uid://dryficj46r4q3" path="res://Assets/texturaEscudo2.webp" id="15_r0qvg"]
-[ext_resource type="Texture2D" uid="uid://gvtwoi2a2dg4" path="res://Assets/BarraEscudo.png" id="16_ysgk3"]
-[ext_resource type="Texture2D" uid="uid://khax7jjistoo" path="res://Assets/Escudo.png" id="17_l1xr6"]
+[ext_resource type="Script" uid="uid://wadxr26ehqys" path="res://Escenas/Jugador.gd" id="1_rxehh"]
+[ext_resource type="Texture2D" uid="uid://xe04fya8exmo" path="res://Assets/Player/Nave.png" id="2_a25kk"]
+[ext_resource type="Texture2D" uid="uid://qcev0r3v27ws" path="res://Assets/Player/Fuego/Fuego.png" id="3_kxsad"]
+[ext_resource type="Texture2D" uid="uid://bv2i3jmxmkiab" path="res://Assets/Player/Fuego/Fuego3.png" id="5_lg3ev"]
+[ext_resource type="Texture2D" uid="uid://bnryqbp3jbkpg" path="res://Assets/Player/Fuego/Fuego4.png" id="6_uls8w"]
+[ext_resource type="Texture2D" uid="uid://btndpil2ka4kd" path="res://Assets/Player/Fuego/Fuego5.png" id="7_qhv8p"]
+[ext_resource type="Texture2D" uid="uid://dlrnjk1qyxnjf" path="res://Assets/Player/Fuego/Fuego7.png" id="8_ul6rp"]
+[ext_resource type="Texture2D" uid="uid://biav2umgoql6v" path="res://Assets/Player/Explocion/NaveExplota1.png" id="8_wl01q"]
+[ext_resource type="Texture2D" uid="uid://5y8tcvj7ckf2" path="res://Assets/Player/Explocion/NaveExplota2.png" id="9_fud4x"]
+[ext_resource type="Texture2D" uid="uid://blq6c0vn4n3sc" path="res://Assets/Player/Explocion/NaveExplota3.png" id="10_vns0i"]
+[ext_resource type="Texture2D" uid="uid://80rtmeu414yr" path="res://Assets/Player/Explocion/NaveExplota4.png" id="11_rb1e8"]
+[ext_resource type="Texture2D" uid="uid://hkex0ufo07gv" path="res://Assets/Player/Explocion/NaveExplota5.png" id="12_bj8xd"]
+[ext_resource type="Shader" uid="uid://5e64vohqbkks" path="res://Escenas/Shaders/escudoJugador.gdshader" id="13_xcs61"]
+[ext_resource type="Texture2D" uid="uid://crtk425mw5oeq" path="res://Assets/Player/texturaEscudo.webp" id="14_o2aol"]
+[ext_resource type="Texture2D" uid="uid://dryficj46r4q3" path="res://Assets/Player/texturaEscudo2.webp" id="15_r0qvg"]
+[ext_resource type="Texture2D" uid="uid://gvtwoi2a2dg4" path="res://Assets/Player/BarraEscudo.png" id="16_ysgk3"]
+[ext_resource type="Texture2D" uid="uid://khax7jjistoo" path="res://Assets/Player/Escudo.png" id="17_l1xr6"]
 
 [sub_resource type="Animation" id="Animation_8c0tw"]
 resource_name = "Explotar"
@@ -323,16 +323,16 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5jei1"]
 _data = {
-"Explotar": SubResource("Animation_8c0tw"),
-"Fuego": SubResource("Animation_tnx7v"),
-"RESET": SubResource("Animation_rn1jj"),
-"arriba": SubResource("Animation_xciuj"),
-"derecha": SubResource("Animation_0pvlq"),
-"detenido": SubResource("Animation_5v0t7"),
-"izquierda": SubResource("Animation_xwm07"),
-"para_arriba": SubResource("Animation_l8fw8"),
-"para_derecha": SubResource("Animation_bk5l5"),
-"para_izquierda": SubResource("Animation_fij1e")
+&"Explotar": SubResource("Animation_8c0tw"),
+&"Fuego": SubResource("Animation_tnx7v"),
+&"RESET": SubResource("Animation_rn1jj"),
+&"arriba": SubResource("Animation_xciuj"),
+&"derecha": SubResource("Animation_0pvlq"),
+&"detenido": SubResource("Animation_5v0t7"),
+&"izquierda": SubResource("Animation_xwm07"),
+&"para_arriba": SubResource("Animation_l8fw8"),
+&"para_derecha": SubResource("Animation_bk5l5"),
+&"para_izquierda": SubResource("Animation_fij1e")
 }
 
 [sub_resource type="Animation" id="Animation_fb6mj"]
@@ -416,8 +416,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1dtvr"]
 _data = {
-"Inmortal": SubResource("Animation_fb6mj"),
-"RESET": SubResource("Animation_2reun")
+&"Inmortal": SubResource("Animation_fb6mj"),
+&"RESET": SubResource("Animation_2reun")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ta4s"]
@@ -429,10 +429,10 @@ radius = 38.0526
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jutpc"]
 shader = ExtResource("13_xcs61")
-shader_parameter/brightness = -10.0
-shader_parameter/time_scale = 1.0
 shader_parameter/noise = ExtResource("14_o2aol")
 shader_parameter/noise2 = ExtResource("15_r0qvg")
+shader_parameter/brightness = -10.0
+shader_parameter/time_scale = 1.0
 
 [node name="Jugador" type="CharacterBody2D" groups=["jugador"]]
 script = ExtResource("1_rxehh")
@@ -447,20 +447,20 @@ texture = ExtResource("3_kxsad")
 [node name="AnimationPlayer_Fuego" type="AnimationPlayer" parent="." groups=["jugador"]]
 root_node = NodePath("../FuegoJs")
 libraries = {
-"": SubResource("AnimationLibrary_5jei1")
+&"": SubResource("AnimationLibrary_5jei1")
 }
 autoplay = "Fuego"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["jugador"]]
 root_node = NodePath("../FuegoJs")
 libraries = {
-"": SubResource("AnimationLibrary_5jei1")
+&"": SubResource("AnimationLibrary_5jei1")
 }
 autoplay = "Fuego"
 
 [node name="Inmortal" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_1dtvr")
+&"": SubResource("AnimationLibrary_1dtvr")
 }
 
 [node name="Nave" type="Sprite2D" parent="." groups=["jugador"]]

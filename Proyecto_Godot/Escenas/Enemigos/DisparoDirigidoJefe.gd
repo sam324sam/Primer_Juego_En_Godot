@@ -21,7 +21,6 @@ func _ready():
 	await get_tree().create_timer(0.5).timeout
 	laser.width = 40
 	$Apuntado.visible = 0
-	$AudioStreamPlayer2D.stop
 	generarLaser()
 	await get_tree().create_timer(2.5).timeout
 	queue_free()
@@ -48,18 +47,19 @@ func generarLaser():
 	generar_area2d(point_a,extended_point)
 	
 
-func generar_area2d(point_a: Vector2, extended_point: Vector2):
+@warning_ignore("shadowed_variable")
+func generar_area2d(point_start: Vector2, extended_point: Vector2):
 	# Calcula el ángulo de rotación de la línea
-	direction = (extended_point - point_a).normalized()
+	direction = (extended_point - point_start).normalized()
 	var angulo = direction.angle()
 	# Calcula la distancia entre los puntos
-	var distancia = point_a.distance_to(extended_point)
+	var distancia = point_start.distance_to(extended_point)
 	# Ajusta la rotación y el tamaño del CollisionShape2D
 	$Area2D/CollisionShape2D.rotation = angulo #Genero el area para coincidir con la linea (ver vectores)
 	$Area2D/CollisionShape2D.scale.x = distancia
 	$Area2D/CollisionShape2D.scale.y = 1  # Mantiene la altura del CollisionShape2D constante
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if rastreo:
 		var global_point_b = Global.posicionJugador
 		local_point_b = to_local(global_point_b)

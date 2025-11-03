@@ -148,10 +148,9 @@ func generarFilaEnemigos():
 			intervalo_enemigos = true
 
 func aparecerJefe():
-	var auxiliar = true
 	var jefe = load("res://Escenas/Enemigos/Jefe1.tscn").instantiate()
 	jefe.position = Vector2(viewport_rect.size.x/2+10,-400)
-	var advertencia = preload("res://Escenas/Enemigos/adevertenciaJefe.tscn").instantiate()
+	advertencia = preload("res://Escenas/Enemigos/adevertenciaJefe.tscn").instantiate()
 	advertencia.position = Vector2(viewport_rect.size.x/2+10,50)
 	get_parent().add_child(advertencia)
 	spawnEnemigos = false

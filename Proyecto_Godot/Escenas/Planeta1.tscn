@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dhqapa4otqqwp"]
 
-[ext_resource type="Script" path="res://Escenas/Scripts/Escenario/Planeta1.gd" id="2_7w03g"]
+[ext_resource type="Script" uid="uid://dbke5bntupnno" path="res://Escenas/Scripts/Escenario/Planeta1.gd" id="2_7w03g"]
 [ext_resource type="Texture2D" uid="uid://b285rxipcsn7a" path="res://Assets/Escenario/Planeta1.png" id="2_knfjr"]
 
 [node name="Node2D" type="Node2D"]

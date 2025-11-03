@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://qkv4y7mbcbl1"]
 
 [ext_resource type="PackedScene" uid="uid://d0rpras1t7rpw" path="res://Escenas/Enemigos/Blaster.tscn" id="1_d80n8"]
-[ext_resource type="Script" path="res://Escenas/Enemigos/FilasBlasterJefe1Fase2.gd" id="1_dbin1"]
+[ext_resource type="Script" uid="uid://xi6g6mc811m1" path="res://Escenas/Enemigos/FilasBlasterJefe1Fase2.gd" id="1_dbin1"]
 [ext_resource type="PackedScene" uid="uid://c31u46fwu1n7f" path="res://Escenas/Advertencia.tscn" id="2_vkjtb"]
 
 [sub_resource type="Animation" id="Animation_4wqya"]
@@ -85,8 +85,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wg7k5"]
 _data = {
-"RESET": SubResource("Animation_4wqya"),
-"entrar": SubResource("Animation_yu6it")
+&"RESET": SubResource("Animation_4wqya"),
+&"entrar": SubResource("Animation_yu6it")
 }
 
 [node name="Node2D" type="Node2D"]
@@ -122,7 +122,7 @@ grow_vertical = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_wg7k5")
+&"": SubResource("AnimationLibrary_wg7k5")
 }
 autoplay = "entrar"
 

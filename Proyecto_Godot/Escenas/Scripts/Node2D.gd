@@ -1,6 +1,6 @@
 extends Node2D
 var is_paused := false
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("Menu"):
 		if is_paused:
 			print("quitar pausa")
